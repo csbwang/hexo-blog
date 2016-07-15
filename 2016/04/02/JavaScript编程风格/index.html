@@ -1,0 +1,914 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,编程风格," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="所谓”编程风格”（programming style），指的是编写代码的样式规则。不同的程序员，往往有不同的编程风格。
+有人说，编译器的规范叫做”语法规则”（grammar），这是程序员必须遵守的；而编译器忽略的部分，就叫”编程风格”（programming style），这是程序员可以自由选择的。这种说法不完全正确，程序员固然可以自由选择编程风格，但是好的编程风格有助于写出质量更高、错误更少、更">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript编程风格">
+<meta property="og:url" content="http://yoursite.com/2016/04/02/JavaScript编程风格/index.html">
+<meta property="og:site_name" content="Phenix">
+<meta property="og:description" content="所谓”编程风格”（programming style），指的是编写代码的样式规则。不同的程序员，往往有不同的编程风格。
+有人说，编译器的规范叫做”语法规则”（grammar），这是程序员必须遵守的；而编译器忽略的部分，就叫”编程风格”（programming style），这是程序员可以自由选择的。这种说法不完全正确，程序员固然可以自由选择编程风格，但是好的编程风格有助于写出质量更高、错误更少、更">
+<meta property="og:updated_time" content="2016-05-17T01:49:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript编程风格">
+<meta name="twitter:description" content="所谓”编程风格”（programming style），指的是编写代码的样式规则。不同的程序员，往往有不同的编程风格。
+有人说，编译器的规范叫做”语法规则”（grammar），这是程序员必须遵守的；而编译器忽略的部分，就叫”编程风格”（programming style），这是程序员可以自由选择的。这种说法不完全正确，程序员固然可以自由选择编程风格，但是好的编程风格有助于写出质量更高、错误更少、更">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6266976284266464000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> JavaScript编程风格 | Phenix </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?bad91fe82dca9dbabcee476d298420ff";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Phenix</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript编程风格
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-02T20:10:08+08:00" content="2016-04-02">
+              2016-04-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/02/JavaScript编程风格/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/JavaScript编程风格/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>所谓”编程风格”（programming style），指的是编写代码的样式规则。不同的程序员，往往有不同的编程风格。</p>
+<p>有人说，编译器的规范叫做”语法规则”（grammar），这是程序员必须遵守的；而编译器忽略的部分，就叫”编程风格”（programming style），这是程序员可以自由选择的。这种说法不完全正确，程序员固然可以自由选择编程风格，但是好的编程风格有助于写出质量更高、错误更少、更易于维护的程序。<br><a id="more"></a></p>
+<p>所以，”编程风格”的选择不应该基于个人爱好、熟悉程度、打字量等因素，而要考虑如何尽量使代码清晰易读、减少出错。你选择的，不是你喜欢的风格，而是一种能够清晰表达你的意图的风格。这一点，对于JavaScript这种语法自由度很高的语言尤其重要。</p>
+<p>必须牢记的一点是，如果你选定了一种“编程风格”，就应该坚持遵守，切忌多种风格混用。如果你加入他人的项目，就应该遵守现有的风格。</p>
+<h2 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h2><p>空格和Tab键，都可以产生缩进效果（indent）。</p>
+<p>Tab键可以节省击键次数，但不同的文本编辑器对Tab的显示不尽相同，有的显示四个空格，有的显示两个空格，所以有人觉得，空格键可以使得显示效果更统一。</p>
+<p>无论你选择哪一种方法，都是可以接受的，要做的就是始终坚持这一种选择。不要一会使用Tab键，一会使用空格键。</p>
+<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>如果循环和判断的代码体只有一行，JavaScript允许该区块（block）省略大括号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a)</div><div class="line">  b();</div><div class="line">  c();</div></pre></td></tr></table></figure>
+<p>上面代码的原意可能是下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">  b();</div><div class="line">  c();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是，实际效果却是下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">  b();</div><div class="line">&#125;</div><div class="line">  c();</div></pre></td></tr></table></figure>
+<p>因此，总是使用大括号表示区块。</p>
+<p>另外，区块起首的大括号的位置，有许多不同的写法。</p>
+<p>最流行的有两种。一种是起首的大括号另起一行：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">block</div><div class="line">&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另一种是起首的大括号跟在关键字的后面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">block &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一般来说，这两种写法都可以接受。但是，JavaScript要使用后一种，因为JavaScript会自动添加句末的分号，导致一些难以察觉的错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span></div><div class="line">&#123;</div><div class="line">  key: value</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>上面的代码的原意，是要返回一个对象，但实际上返回的是<code>undefined</code>，因为JavaScript自动在return语句后面添加了分号。为了避免这一类错误，需要写成下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> &#123;</div><div class="line">  key : value</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>因此，表示区块起首的大括号，不要另起一行。</p>
+<h2 id="圆括号"><a href="#圆括号" class="headerlink" title="圆括号"></a>圆括号</h2><p>圆括号（parentheses）在JavaScript中有两种作用，一种表示函数的调用，另一种表示表达式的组合（grouping）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 圆括号表示函数的调用</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'abc'</span>);</div><div class="line"></div><div class="line"><span class="comment">// 圆括号表示表达式的组合</span></div><div class="line">(<span class="number">1</span> + <span class="number">2</span>) * <span class="number">3</span></div></pre></td></tr></table></figure>
+<p>我们可以用空格，区分这两种不同的括号。</p>
+<blockquote>
+<ol>
+<li><p>表示函数调用时，函数名与左括号之间没有空格。</p>
+</li>
+<li><p>表示函数定义时，函数名与左括号之间没有空格。</p>
+</li>
+<li><p>其他情况时，前面位置的语法元素与左括号之间，都有一个空格。</p>
+</li>
+</ol>
+</blockquote>
+<p>按照上面的规则，下面的写法都是不规范的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">foo (bar)</div><div class="line"><span class="keyword">return</span>(a+b);</div><div class="line"><span class="keyword">if</span>(a === <span class="number">0</span>) &#123;...&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span> (<span class="params">b</span>) </span>&#123;...&#125;</div><div class="line"><span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;...&#125;</div></pre></td></tr></table></figure>
+<p>上面代码的最后一行是一个匿名函数，function是语法关键字，不是函数名，所以与左括号之间应该要有一个空格。</p>
+<h2 id="行尾的分号"><a href="#行尾的分号" class="headerlink" title="行尾的分号"></a>行尾的分号</h2><h3 id="不使用分号的情况"><a href="#不使用分号的情况" class="headerlink" title="不使用分号的情况"></a>不使用分号的情况</h3><p>分号表示一条语句的结束。有一些语法结构不需要在语句的结尾添加分号，主要是以下三种情况。</p>
+<p><strong>（1）for和while循环</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> ( ; ; ) &#123;</div><div class="line">&#125; <span class="comment">// 没有分号</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</div><div class="line">&#125; <span class="comment">// 没有分号</span></div></pre></td></tr></table></figure>
+<p>需要注意的是<code>do...while</code>循环是有分号的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">do</span> &#123;</div><div class="line">  a--;</div><div class="line">&#125; <span class="keyword">while</span>(a &gt; <span class="number">0</span>); <span class="comment">// 分号不能省略</span></div></pre></td></tr></table></figure>
+<p><strong>（2）分支语句：if，switch，try</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">&#125; <span class="comment">// 没有分号</span></div><div class="line"></div><div class="line"><span class="keyword">switch</span> () &#123;</div><div class="line">&#125; <span class="comment">// 没有分号</span></div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">&#125; <span class="keyword">catch</span> &#123;</div><div class="line">&#125; <span class="comment">// 没有分号</span></div></pre></td></tr></table></figure>
+<p><strong>（3）函数的声明语句</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">&#125; <span class="comment">// 没有分号</span></div></pre></td></tr></table></figure>
+<p>但是函数表达式仍然要使用分号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>以上三种情况，如果使用了分号，并不会出错。因为，解释引擎会把这个分号解释为空语句。</p>
+<h3 id="分号的自动添加"><a href="#分号的自动添加" class="headerlink" title="分号的自动添加"></a>分号的自动添加</h3><p>除了上一节的三种情况，所有语句都应该使用分号。但是，如果没有使用分号，大多数情况下，JavaScript会自动添加。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p>这种语法特性被称为“分号的自动添加”（Automatic Semicolon Insertion，简称ASI）。</p>
+<p>因此，有人提倡省略句尾的分号。麻烦的是，如果下一行的开始可以与本行的结尾连在一起解释，JavaScript就不会自动添加分号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 等同于 var a = 3</span></div><div class="line"><span class="keyword">var</span></div><div class="line">a</div><div class="line">=</div><div class="line"><span class="number">3</span></div><div class="line"></div><div class="line"><span class="comment">// 等同于 'abc'.length</span></div><div class="line"><span class="string">'abc'</span></div><div class="line">.length</div><div class="line"></div><div class="line"><span class="comment">// 等同于 return a + b;</span></div><div class="line"><span class="keyword">return</span> a +</div><div class="line">b;</div><div class="line"></div><div class="line"><span class="comment">// 等同于 obj.foo(arg1, arg2);</span></div><div class="line">obj.foo(arg1,</div><div class="line">arg2);</div><div class="line"></div><div class="line"><span class="comment">// 等同于 3 * 2 + 10 * (27 / 6)</span></div><div class="line"><span class="number">3</span> * <span class="number">2</span></div><div class="line">+</div><div class="line"><span class="number">10</span> * (<span class="number">27</span> / <span class="number">6</span>)</div></pre></td></tr></table></figure>
+<p>上面代码都会多行放在一起解释，不会每一行自动添加分号。这些例子还是比较容易看出来的，但是下面这个例子就不那么容易看出来了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">x = y</div><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line">x = y(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;...&#125;)();</div></pre></td></tr></table></figure>
+<p>下面是更多不会自动添加分号的例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解释为 c(d+e)</span></div><div class="line"><span class="keyword">var</span> a = b + c</div><div class="line">(d+e).toString();</div><div class="line"></div><div class="line"><span class="comment">// 解释为 a = b/hi/g.exec(c).map(d)</span></div><div class="line"><span class="comment">// 正则表达式的斜杠，会当作除法运算符</span></div><div class="line">a = b</div><div class="line">/hi/g.exec(c).map(d);</div><div class="line"></div><div class="line"><span class="comment">// 解释为'b'['red', 'green']，</span></div><div class="line"><span class="comment">// 即把字符串当作一个数组，按索引取值</span></div><div class="line"><span class="keyword">var</span> a = <span class="string">'b'</span></div><div class="line">[<span class="string">'red'</span>, <span class="string">'green'</span>].forEach(<span class="function"><span class="keyword">function</span> (<span class="params">c</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(c);</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 解释为 function(x) &#123; return x &#125;(a++)</span></div><div class="line"><span class="comment">// 即调用匿名函数，结果f等于0</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> x &#125;</div><div class="line">(a++)</div></pre></td></tr></table></figure>
+<p>一般来说，在没有分号结尾的情况下，如果本行的结尾或者下一行起首的，是<code>(</code>、<code>[</code>、<code>+</code>、<code>-</code>、<code>/</code>这五个字符中的一个，分号不会被自动添加。</p>
+<p>只有下一行的开始与本行的结尾，无法放在一起解释，JavaScript引擎才会自动添加分号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a &lt; <span class="number">0</span>) a = <span class="number">0</span></div><div class="line"><span class="built_in">console</span>.log(a)</div><div class="line"></div><div class="line"><span class="comment">// 等同于下面的代码，</span></div><div class="line"><span class="comment">// 因为0console没有意义</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> (a &lt; <span class="number">0</span>) a = <span class="number">0</span>;</div><div class="line"><span class="built_in">console</span>.log(a)</div></pre></td></tr></table></figure>
+<p>另外，如果一行的起首是“自增”（<code>++</code>）或“自减”（<code>--</code>）运算符，则它们的前面会自动添加分号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">a = b = c = <span class="number">1</span></div><div class="line"></div><div class="line">a</div><div class="line">++</div><div class="line">b</div><div class="line">--</div><div class="line">c</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a, b, c)</div><div class="line"><span class="comment">// 1 2 0</span></div></pre></td></tr></table></figure>
+<p>上面代码 之所以会得到“1 2 0”的结果，原因是自增和自减运算符前，自动加上了分号。上面的代码实际上等同于下面的形式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = b = c = <span class="number">1</span>;</div><div class="line">a;</div><div class="line">++b;</div><div class="line">--c;</div></pre></td></tr></table></figure>
+<p>如果<code>continue</code>、<code>break</code>、<code>return</code>和<code>throw</code>这四个语句后面，直接跟换行符，则会自动添加分号。这意味着，如果<code>return</code>语句返回的是一个对象的字面量，起首的大括号一定要写在同一行，否则得不到预期结果。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span></div><div class="line">&#123; first: <span class="string">'Jane'</span> &#125;;</div><div class="line"></div><div class="line"><span class="comment">// 解释成</span></div><div class="line"><span class="keyword">return</span>;</div><div class="line">&#123; first: <span class="string">'Jane'</span> &#125;;</div></pre></td></tr></table></figure>
+<p>由于解释引擎自动添加分号的行为难以预测，因此编写代码的时候不应该省略行尾的分号。</p>
+<p>不应该省略结尾的分号，还有一个原因。有些JavaScript代码压缩器不会自动添加分号，因此遇到没有分号的结尾，就会让代码保持原状，而不是压缩成一行，使得压缩无法得到最优的结果。</p>
+<p>另外，不写结尾的分号，可能会导致脚本合并出错。所以，有的代码库在第一行语句开始前，会加上一个分号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">;<span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="comment">// ...</span></div></pre></td></tr></table></figure>
+<p>上面这种写法就可以避免与其他脚本合并时，排在前面的脚本最后一行语句没有分号，导致运行出错的问题。</p>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>JavaScript最大的语法缺点，可能就是全局变量对于任何一个代码块，都是可读可写。这对代码的模块化和重复使用，非常不利。</p>
+<p>因此，避免使用全局变量。如果不得不使用，用大写字母表示变量名，比如<code>UPPER_CASE</code>。</p>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><p>JavaScript会自动将变量声明”提升”（hoist）到代码块（block）的头部。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!o) &#123;</div><div class="line">  <span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等同于</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> o;</div><div class="line"><span class="keyword">if</span> (!o) &#123;</div><div class="line">  o = &#123;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>为了避免可能出现的问题，最好把变量声明都放在代码块的头部。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 写成</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> i;</div><div class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外，所有函数都应该在使用之前定义，函数内部的变量声明，都应该放在函数的头部。</p>
+<h2 id="new命令"><a href="#new命令" class="headerlink" title="new命令"></a>new命令</h2><p>JavaScript使用<code>new</code>命令，从构造函数生成一个新对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> myObject();</div></pre></td></tr></table></figure>
+<p>上面这种做法的问题是，一旦你忘了加上<code>new</code>，<code>myObject()</code>内部的<code>this</code>关键字就会指向全局对象，导致所有绑定在<code>this</code>上面的变量，都变成全局变量。</p>
+<p>因此，建议使用<code>Object.create()</code>命令，替代<code>new</code>命令。如果不得不使用<code>new</code>，为了防止出错，最好在视觉上把构造函数与其他函数区分开来。比如，构造函数的函数名，采用首字母大写（InitialCap），其他函数名一律首字母小写。</p>
+<h2 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a>with语句</h2><p><code>with</code>可以减少代码的书写，但是会造成混淆。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> (o) &#123;</div><div class="line">　foo = bar;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码，可以有四种运行结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">o.foo = bar;</div><div class="line">o.foo = o.bar;</div><div class="line">foo = bar;</div><div class="line">foo = o.bar;</div></pre></td></tr></table></figure>
+<p>这四种结果都可能发生，取决于不同的变量是否有定义。因此，不要使用<code>with</code>语句。</p>
+<h2 id="相等和严格相等"><a href="#相等和严格相等" class="headerlink" title="相等和严格相等"></a>相等和严格相等</h2><p>JavaScript有两个表示”相等”的运算符：”相等”（<code>==</code>）和”严格相等”（<code>===</code>）。</p>
+<p>因为”相等”运算符会自动转换变量类型，造成很多意想不到的情况：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">0</span> == <span class="string">''</span><span class="comment">// true</span></div><div class="line"><span class="number">1</span> == <span class="literal">true</span> <span class="comment">// true</span></div><div class="line"><span class="number">2</span> == <span class="literal">true</span> <span class="comment">// false</span></div><div class="line"><span class="number">0</span> == <span class="string">'0'</span> <span class="comment">// true</span></div><div class="line"><span class="literal">false</span> == <span class="string">'false'</span> <span class="comment">// false</span></div><div class="line"><span class="literal">false</span> == <span class="string">'0'</span> <span class="comment">// true</span></div><div class="line">’ \t\r\n <span class="string">' == 0 // true</span></div></pre></td></tr></table></figure>
+<p>因此，不要使用“相等”（<code>==</code>）运算符，只使用“严格相等”（<code>===</code>）运算符。</p>
+<h2 id="语句的合并"><a href="#语句的合并" class="headerlink" title="语句的合并"></a>语句的合并</h2><p>有些程序员追求简洁，喜欢合并不同目的的语句。比如，原来的语句是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = b;</div><div class="line"><span class="keyword">if</span> (a) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>他喜欢写成下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a = b) &#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>虽然语句少了一行，但是可读性大打折扣，而且会造成误读，让别人误解这行代码的意思是下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> （a === b）&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>建议不要将不同目的的语句，合并成一行。</p>
+<h2 id="自增和自减运算符"><a href="#自增和自减运算符" class="headerlink" title="自增和自减运算符"></a>自增和自减运算符</h2><p>自增（<code>++</code>）和自减（<code>--</code>）运算符，放在变量的前面或后面，返回的值不一样，很容易发生错误。事实上，所有的<code>++</code>运算符都可以用<code>+= 1</code>代替。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">++x</div><div class="line"><span class="comment">// 等同于</span></div><div class="line">x += <span class="number">1</span>;</div></pre></td></tr></table></figure>
+<p>改用<code>+= 1</code>，代码变得更清晰了。有一个很可笑的例子，某个JavaScript函数库的源代码中出现了下面的片段：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">++x;</div><div class="line">++x;</div></pre></td></tr></table></figure>
+<p>这个程序员忘了，还有更简单、更合理的写法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x += <span class="number">2</span>;</div></pre></td></tr></table></figure>
+<p>建议自增（<code>++</code>）和自减（<code>--</code>）运算符尽量使用<code>+=</code>和<code>-=</code>代替。</p>
+<blockquote>
+<p>本文转载自阮一峰老师的博客，地址为<a href="http://javascript.ruanyifeng.com/grammar/style.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/grammar/style.html</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/编程风格/" rel="tag">#编程风格</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/02/Java集合/" rel="next" title="Java集合">
+                <i class="fa fa-chevron-left"></i> Java集合
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/06/前端面试题大整理/" rel="prev" title="前端面试题大整理">
+                前端面试题大整理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/02/JavaScript编程风格/"
+           data-title="JavaScript编程风格" data-url="http://yoursite.com/2016/04/02/JavaScript编程风格/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="WangBo" />
+          <p class="site-author-name" itemprop="name">WangBo</p>
+          <p class="site-description motion-element" itemprop="description">stay hungry stay foolish</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/csbwang" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1823075690" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://github.com/jobbole" target="_blank">伯乐在线</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.html-js.com/" target="_blank">前端乱炖</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缩进"><span class="nav-number">1.</span> <span class="nav-text">缩进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区块"><span class="nav-number">2.</span> <span class="nav-text">区块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆括号"><span class="nav-number">3.</span> <span class="nav-text">圆括号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行尾的分号"><span class="nav-number">4.</span> <span class="nav-text">行尾的分号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不使用分号的情况"><span class="nav-number">4.1.</span> <span class="nav-text">不使用分号的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分号的自动添加"><span class="nav-number">4.2.</span> <span class="nav-text">分号的自动添加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局变量"><span class="nav-number">5.</span> <span class="nav-text">全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量声明"><span class="nav-number">6.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#new命令"><span class="nav-number">7.</span> <span class="nav-text">new命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#with语句"><span class="nav-number">8.</span> <span class="nav-text">with语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相等和严格相等"><span class="nav-number">9.</span> <span class="nav-text">相等和严格相等</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语句的合并"><span class="nav-number">10.</span> <span class="nav-text">语句的合并</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自增和自减运算符"><span class="nav-number">11.</span> <span class="nav-text">自增和自减运算符</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WangBo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"csbwang"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+</body>
+</html>

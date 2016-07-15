@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="VIM," />
+  <meta name="keywords" content="刷题," />
 
 
 
@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="查看现在文本的编码1:set fileencoding
-转换当前文本的编码为指定的编码1:set fenc=编码">
+<meta name="description" content="题目要求：判断一个链表是否存在环，尽可能不用太多额外空间。思路：hash的思想需要额外的空间，本题利用快慢指针的思想，如果两个指针相遇，则存在环，否则不存在。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VIM修改文件编码">
-<meta property="og:url" content="http://yoursite.com/2016/03/28/VIM修改文件编码/index.html">
+<meta property="og:title" content="Linked List Cycle">
+<meta property="og:url" content="http://yoursite.com/2016/07/15/Linked-List-Cycle/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="查看现在文本的编码1:set fileencoding
-转换当前文本的编码为指定的编码1:set fenc=编码">
-<meta property="og:updated_time" content="2016-05-17T01:47:28.000Z">
+<meta property="og:description" content="题目要求：判断一个链表是否存在环，尽可能不用太多额外空间。思路：hash的思想需要额外的空间，本题利用快慢指针的思想，如果两个指针相遇，则存在环，否则不存在。">
+<meta property="og:updated_time" content="2016-07-15T08:17:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VIM修改文件编码">
-<meta name="twitter:description" content="查看现在文本的编码1:set fileencoding
-转换当前文本的编码为指定的编码1:set fenc=编码">
+<meta name="twitter:title" content="Linked List Cycle">
+<meta name="twitter:description" content="题目要求：判断一个链表是否存在环，尽可能不用太多额外空间。思路：hash的思想需要额外的空间，本题利用快慢指针的思想，如果两个指针相遇，则存在环，否则不存在。">
 
 
 
@@ -87,7 +84,7 @@
   };
 </script>
 
-  <title> VIM修改文件编码 | Phenix </title>
+  <title> Linked List Cycle | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +234,7 @@
             
             
               
-                VIM修改文件编码
+                Linked List Cycle
               
             
           </h1>
@@ -249,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-28T16:05:29+08:00" content="2016-03-28">
-              2016-03-28
+            <time itemprop="dateCreated" datetime="2016-07-15T16:11:57+08:00" content="2016-07-15">
+              2016-07-15
             </time>
           </span>
 
@@ -263,8 +260,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -279,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/28/VIM修改文件编码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/28/VIM修改文件编码/" itemprop="commentsCount"></span>
+                <a href="/2016/07/15/Linked-List-Cycle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/15/Linked-List-Cycle/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,13 +299,8 @@
       
 
       
-        <p>查看现在文本的编码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:set fileencoding</div></pre></td></tr></table></figure></p>
-<p>转换当前文本的编码为指定的编码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:set fenc=编码</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>以指定的编码显示文本，但不保存到文件中。<br>这里的“编码”常见为<code>gbk</code> <code>utf-8</code> <code>big5</code> <code>cp936</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:set enc=编码</div></pre></td></tr></table></figure></p>
-<p>查看当前文本的模式类型，一般为<code>dos</code>,<code>unix</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:set ff?</div></pre></td></tr></table></figure></p>
-<p>设置为<code>dos</code>模式<br>也可以用一下方式转换为<code>unix</code>模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">:set ff=dos</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">:%s/^M//g</div><div class="line">等同于`:set ff=unix`</div></pre></td></tr></table></figure>
+        <p>题目要求：判断一个链表是否存在环，尽可能不用太多额外空间。<br>思路：hash的思想需要额外的空间，本题利用快慢指针的思想，如果两个指针相遇，则存在环，否则不存在。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * class ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode next;</div><div class="line"> *     ListNode(int x) &#123;</div><div class="line"> *         val = x;</div><div class="line"> *         next = null;</div><div class="line"> *     &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasCycle</span><span class="params">(ListNode head)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(head == <span class="keyword">null</span> || head.next == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        ListNode slow = head, fast = head;</div><div class="line">        <span class="keyword">while</span>(fast.next != <span class="keyword">null</span> &amp;&amp; fast.next.next != <span class="keyword">null</span>)&#123;</div><div class="line">            slow = slow.next;</div><div class="line">            fast = fast.next.next;</div><div class="line">            <span class="keyword">if</span>(slow == fast) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -322,7 +314,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/VIM/" rel="tag">#VIM</a>
+            <a href="/tags/刷题/" rel="tag">#刷题</a>
           
         </div>
       
@@ -331,17 +323,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/28/HTML面试题/" rel="next" title="HTML面试题">
-                <i class="fa fa-chevron-left"></i> HTML面试题
+              <a href="/2016/06/05/linux-命令积累一/" rel="next" title="linux 命令积累一">
+                <i class="fa fa-chevron-left"></i> linux 命令积累一
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/28/使用Hexo和Github搭建个人博客/" rel="prev" title="使用Hexo和Github搭建个人博客">
-                使用Hexo和Github搭建个人博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -373,8 +361,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/28/VIM修改文件编码/"
-           data-title="VIM修改文件编码" data-url="http://yoursite.com/2016/03/28/VIM修改文件编码/">
+      <div class="ds-thread" data-thread-key="2016/07/15/Linked-List-Cycle/"
+           data-title="Linked List Cycle" data-url="http://yoursite.com/2016/07/15/Linked-List-Cycle/">
       </div>
     
   </div>

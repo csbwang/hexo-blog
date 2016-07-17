@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：判断一个树是不是镜像树思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。">
+<meta name="description" content="题目要求：判断一个树是不是平衡二叉树思路：直接对一个树进行判断不好做，可以先求左右子树的深度，然后判断优化思路：由于递归会重复计算一些子树的深度，所以可以考虑想办法将计算过的子树的深度保存起来">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Symmetric Tree">
-<meta property="og:url" content="http://yoursite.com/2016/07/16/Symmetric Tree/index.html">
+<meta property="og:title" content="Balanced Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2016/07/17/Balanced Binary Tree/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：判断一个树是不是镜像树思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。">
-<meta property="og:updated_time" content="2016-07-16T15:48:12.000Z">
+<meta property="og:description" content="题目要求：判断一个树是不是平衡二叉树思路：直接对一个树进行判断不好做，可以先求左右子树的深度，然后判断优化思路：由于递归会重复计算一些子树的深度，所以可以考虑想办法将计算过的子树的深度保存起来">
+<meta property="og:updated_time" content="2016-07-17T03:59:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Symmetric Tree">
-<meta name="twitter:description" content="题目要求：判断一个树是不是镜像树思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。">
+<meta name="twitter:title" content="Balanced Binary Tree">
+<meta name="twitter:description" content="题目要求：判断一个树是不是平衡二叉树思路：直接对一个树进行判断不好做，可以先求左右子树的深度，然后判断优化思路：由于递归会重复计算一些子树的深度，所以可以考虑想办法将计算过的子树的深度保存起来">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Symmetric Tree | Phenix </title>
+  <title> Balanced Binary Tree | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +234,7 @@
             
             
               
-                Symmetric Tree
+                Balanced Binary Tree
               
             
           </h1>
@@ -246,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-16T23:32:21+08:00" content="2016-07-16">
-              2016-07-16
+            <time itemprop="dateCreated" datetime="2016-07-17T11:55:07+08:00" content="2016-07-17">
+              2016-07-17
             </time>
           </span>
 
@@ -276,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/16/Symmetric Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/16/Symmetric Tree/" itemprop="commentsCount"></span>
+                <a href="/2016/07/17/Balanced Binary Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/17/Balanced Binary Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,10 +299,9 @@
       
 
       
-        <p>题目要求：判断一个树是不是镜像树<br>思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。</p>
+        <p>题目要求：判断一个树是不是平衡二叉树<br>思路：直接对一个树进行判断不好做，可以先求左右子树的深度，然后判断<br>优化思路：由于递归会重复计算一些子树的深度，所以可以考虑想办法将计算过的子树的深度保存起来</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isDC</span><span class="params">(TreeNode rootP, TreeNode rootQ)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(rootP == <span class="keyword">null</span> &amp;&amp; rootQ == <span class="keyword">null</span>) </div><div class="line">        	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span>(rootP != <span class="keyword">null</span> &amp;&amp; rootQ != <span class="keyword">null</span> &amp;&amp; rootP.val == rootQ.val) </div><div class="line">        	<span class="keyword">return</span> isDC(rootP.left, rootQ.right) &amp;&amp; isDC(rootP.right, rootQ.left);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span> || (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>)) </div><div class="line">        	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">return</span> isDC(root.left, root.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">depth</span><span class="params">(TreeNode root)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="comment">// if(root.left == null &amp;&amp; root.right == null)&#123;</span></div><div class="line">        <span class="comment">//     return 1;</span></div><div class="line">        <span class="comment">// &#125;</span></div><div class="line">        <span class="comment">// int ld = depth(root.left) + 1;</span></div><div class="line">        <span class="comment">// int rd = depth(root.right) + 1;</span></div><div class="line">        <span class="comment">// return ld &gt; rd ? ld : rd;</span></div><div class="line">        <span class="keyword">return</span> <span class="number">1</span> + Math.max(depth(root.left), depth(root.right)); <span class="comment">// 更简洁的写法</span></div><div class="line">    &#125;</div><div class="line">    <span class="comment">// public int absoluteValue(int val)&#123;</span></div><div class="line">    <span class="comment">//     return val &lt; 0 ? val * (-1) : val;</span></div><div class="line">    <span class="comment">// &#125;</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isBalanced</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>)</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="comment">// if(absoluteValue(depth(root.left) - depth(root.right)) &gt; 1)</span></div><div class="line">        <span class="comment">//     return false;</span></div><div class="line">        <span class="keyword">if</span>(Math.abs(depth(root.left) - depth(root.right)) &gt; <span class="number">1</span>)</div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">return</span> isBalanced(root.left) &amp;&amp; isBalanced(root.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -325,17 +324,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/15/Linked-List-Cycle/" rel="next" title="Linked List Cycle">
-                <i class="fa fa-chevron-left"></i> Linked List Cycle
+              <a href="/2016/07/16/Symmetric Tree/" rel="next" title="Symmetric Tree">
+                <i class="fa fa-chevron-left"></i> Symmetric Tree
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/17/Balanced Binary Tree/" rel="prev" title="Balanced Binary Tree">
-                Balanced Binary Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,8 +362,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/16/Symmetric Tree/"
-           data-title="Symmetric Tree" data-url="http://yoursite.com/2016/07/16/Symmetric Tree/">
+      <div class="ds-thread" data-thread-key="2016/07/17/Balanced Binary Tree/"
+           data-title="Balanced Binary Tree" data-url="http://yoursite.com/2016/07/17/Balanced Binary Tree/">
       </div>
     
   </div>

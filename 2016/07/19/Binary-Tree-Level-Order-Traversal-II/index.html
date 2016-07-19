@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Shell," />
+  <meta name="keywords" content="刷题," />
 
 
 
@@ -57,22 +57,16 @@
 
 
 
-<meta name="description" content="原文出处：大CC
-
-本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。">
+<meta name="description" content="题目要求：层序遍历二叉树，但要求从最后一层倒着输出结果，每层顺序依然是从左到右。思路：和正常层序遍历思路类似，注意层号的记录即可。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Shell 文本处理工具集锦">
-<meta property="og:url" content="http://yoursite.com/2016/05/12/Linux-Shell-文本处理工具集锦/index.html">
+<meta property="og:title" content="Binary Tree Level Order Traversal II">
+<meta property="og:url" content="http://yoursite.com/2016/07/19/Binary-Tree-Level-Order-Traversal-II/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="原文出处：大CC
-
-本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。">
-<meta property="og:updated_time" content="2016-05-17T01:47:06.000Z">
+<meta property="og:description" content="题目要求：层序遍历二叉树，但要求从最后一层倒着输出结果，每层顺序依然是从左到右。思路：和正常层序遍历思路类似，注意层号的记录即可。">
+<meta property="og:updated_time" content="2016-07-19T07:13:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Shell 文本处理工具集锦">
-<meta name="twitter:description" content="原文出处：大CC
-
-本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。">
+<meta name="twitter:title" content="Binary Tree Level Order Traversal II">
+<meta name="twitter:description" content="题目要求：层序遍历二叉树，但要求从最后一层倒着输出结果，每层顺序依然是从左到右。思路：和正常层序遍历思路类似，注意层号的记录即可。">
 
 
 
@@ -90,7 +84,7 @@
   };
 </script>
 
-  <title> Linux Shell 文本处理工具集锦 | Phenix </title>
+  <title> Binary Tree Level Order Traversal II | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +234,7 @@
             
             
               
-                Linux Shell 文本处理工具集锦
+                Binary Tree Level Order Traversal II
               
             
           </h1>
@@ -252,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-12T14:42:26+08:00" content="2016-05-12">
-              2016-05-12
+            <time itemprop="dateCreated" datetime="2016-07-19T15:07:17+08:00" content="2016-07-19">
+              2016-07-19
             </time>
           </span>
 
@@ -266,8 +260,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -282,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/12/Linux-Shell-文本处理工具集锦/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/12/Linux-Shell-文本处理工具集锦/" itemprop="commentsCount"></span>
+                <a href="/2016/07/19/Binary-Tree-Level-Order-Traversal-II/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/19/Binary-Tree-Level-Order-Traversal-II/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,46 +299,9 @@
       
 
       
-        <blockquote>
-<p>原文出处：<a href="http://www.cnblogs.com/me115/p/3427319.html" target="_blank" rel="external">大CC</a></p>
-</blockquote>
-<p>本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，<br>提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。<br><a id="more"></a></p>
-<h3 id="find-文件查找"><a href="#find-文件查找" class="headerlink" title="find 文件查找"></a>find 文件查找</h3><ol>
-<li><p>查找txt和pdf文件</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . ( -name <span class="string">"*.txt"</span> -o -name <span class="string">"*.pdf"</span> ) -print</div></pre></td></tr></table></figure>
-</li>
-<li><p>正则方式查找.txt和pdf</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find . -regex  <span class="string">".*(.txt|.pdf)$"</span></div><div class="line"><span class="comment"># -iregex： 忽略大小写的正则</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>否定参数，查找所有非txt文本</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . ! -name <span class="string">"*.txt"</span> -print</div></pre></td></tr></table></figure>
-</li>
-<li><p>指定搜索深度，打印出当前目录的文件（深度为1）</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -maxdepth <span class="number">1</span> -type f</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="定制搜索"><a href="#定制搜索" class="headerlink" title="定制搜索"></a>定制搜索</h3><ol>
-<li><p>按类型搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find . -type d -print  <span class="comment">#只列出所有目录</span></div><div class="line"><span class="comment"># -type f 文件 / l 符号链接</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>按时间搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -atime 访问时间 (单位是天，分钟单位则是-amin，以下类似）</span></div><div class="line"><span class="comment"># -mtime 修改时间 （内容被修改）</span></div><div class="line"><span class="comment"># -ctime 变化时间 （元数据或权限变化）</span></div><div class="line"><span class="comment"># 最近7天被访问过的所有文件：</span></div><div class="line">find . -atime <span class="number">7</span> -type f -print</div></pre></td></tr></table></figure>
-</li>
-<li><p>按大小搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># w字 k M G</span></div><div class="line"><span class="comment"># 寻找大于2k的文件</span></div><div class="line">find . -type f -size +<span class="number">2</span>k</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>按权限搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -type f -perm <span class="number">644</span> -print <span class="comment">#找具有可执行权限的所有文件</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>按用户查找</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -type f -user weber -print <span class="comment">#找用户weber所拥有的文件</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-
+        <p>题目要求：层序遍历二叉树，但要求从最后一层倒着输出结果，每层顺序依然是从左到右。<br>思路：和正常层序遍历思路类似，注意层号的记录即可。</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; levelOrderBottom(TreeNode root) &#123;</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList();</div><div class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">return</span> result;</div><div class="line">        &#125;</div><div class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">        queue.offer(root);</div><div class="line">        <span class="keyword">while</span>(!queue.isEmpty())&#123;</div><div class="line">            List&lt;Integer&gt; level = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">            <span class="comment">// 遍历每一层时，先记录当前层的节点个数，然后for循环一次遍历完该层节点，外侧的while循环只是换层</span></div><div class="line">            <span class="keyword">int</span> nodeNums = queue.size();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nodeNums; i++)&#123;</div><div class="line">                TreeNode curNode = queue.poll();</div><div class="line">                level.add(curNode.val);</div><div class="line">                <span class="keyword">if</span>(curNode.left != <span class="keyword">null</span>)&#123;</div><div class="line">                    queue.offer(curNode.left);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(curNode.right != <span class="keyword">null</span>)&#123;</div><div class="line">                    queue.offer(curNode.right);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            result.add(level);</div><div class="line">        &#125;</div><div class="line">        Collections.reverse(result);</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -358,7 +315,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Shell/" rel="tag">#Shell</a>
+            <a href="/tags/刷题/" rel="tag">#刷题</a>
           
         </div>
       
@@ -367,17 +324,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/简单数据结构算法题/" rel="next" title="简单数据结构算法题">
-                <i class="fa fa-chevron-left"></i> 简单数据结构算法题
+              <a href="/2016/07/19/Power-of-Four/" rel="next" title="Power of Four">
+                <i class="fa fa-chevron-left"></i> Power of Four
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/05/linux-命令积累一/" rel="prev" title="linux 命令积累一">
-                linux 命令积累一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,8 +362,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/12/Linux-Shell-文本处理工具集锦/"
-           data-title="Linux Shell 文本处理工具集锦" data-url="http://yoursite.com/2016/05/12/Linux-Shell-文本处理工具集锦/">
+      <div class="ds-thread" data-thread-key="2016/07/19/Binary-Tree-Level-Order-Traversal-II/"
+           data-title="Binary Tree Level Order Traversal II" data-url="http://yoursite.com/2016/07/19/Binary-Tree-Level-Order-Traversal-II/">
       </div>
     
   </div>
@@ -537,7 +490,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#find-文件查找"><span class="nav-number">1.</span> <span class="nav-text">find 文件查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定制搜索"><span class="nav-number">2.</span> <span class="nav-text">定制搜索</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

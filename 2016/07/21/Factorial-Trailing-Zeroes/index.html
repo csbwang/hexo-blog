@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="刷题," />
 
 
 
@@ -57,19 +57,16 @@
 
 
 
-<meta name="description" content="Java集合集合类和数组不一样，数组元素既可以保存基本类型的值，也可以是对象，但是集合里只能保存对象，Java的集合类主要由两个接口派生而出：Collection和Map
-集合遍历：可以通过Iterator遍历集合元素，它仅仅用于遍历集合，本身没有盛庄对象的能力，它依赖于Collection对象，若有一个Iterator对象，必然有一个与之关联的Collection对象">
+<meta name="description" content="题目要求：求n得阶乘末尾有几个连续的0思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以当n&amp;lt;25时，一共有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java集合">
-<meta property="og:url" content="http://yoursite.com/2016/04/02/Java集合/index.html">
+<meta property="og:title" content="Factorial Trailing Zeroes">
+<meta property="og:url" content="http://yoursite.com/2016/07/21/Factorial-Trailing-Zeroes/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="Java集合集合类和数组不一样，数组元素既可以保存基本类型的值，也可以是对象，但是集合里只能保存对象，Java的集合类主要由两个接口派生而出：Collection和Map
-集合遍历：可以通过Iterator遍历集合元素，它仅仅用于遍历集合，本身没有盛庄对象的能力，它依赖于Collection对象，若有一个Iterator对象，必然有一个与之关联的Collection对象">
-<meta property="og:updated_time" content="2016-05-17T02:02:14.000Z">
+<meta property="og:description" content="题目要求：求n得阶乘末尾有几个连续的0思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以当n&amp;lt;25时，一共有">
+<meta property="og:updated_time" content="2016-07-21T09:29:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java集合">
-<meta name="twitter:description" content="Java集合集合类和数组不一样，数组元素既可以保存基本类型的值，也可以是对象，但是集合里只能保存对象，Java的集合类主要由两个接口派生而出：Collection和Map
-集合遍历：可以通过Iterator遍历集合元素，它仅仅用于遍历集合，本身没有盛庄对象的能力，它依赖于Collection对象，若有一个Iterator对象，必然有一个与之关联的Collection对象">
+<meta name="twitter:title" content="Factorial Trailing Zeroes">
+<meta name="twitter:description" content="题目要求：求n得阶乘末尾有几个连续的0思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以当n&amp;lt;25时，一共有">
 
 
 
@@ -87,7 +84,7 @@
   };
 </script>
 
-  <title> Java集合 | Phenix </title>
+  <title> Factorial Trailing Zeroes | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +234,7 @@
             
             
               
-                Java集合
+                Factorial Trailing Zeroes
               
             
           </h1>
@@ -249,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-02T16:59:12+08:00" content="2016-04-02">
-              2016-04-02
+            <time itemprop="dateCreated" datetime="2016-07-21T17:17:39+08:00" content="2016-07-21">
+              2016-07-21
             </time>
           </span>
 
@@ -263,8 +260,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -279,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/02/Java集合/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/02/Java集合/" itemprop="commentsCount"></span>
+                <a href="/2016/07/21/Factorial-Trailing-Zeroes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/Factorial-Trailing-Zeroes/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,50 +299,9 @@
       
 
       
-        <h2 id="Java集合"><a href="#Java集合" class="headerlink" title="Java集合"></a>Java集合</h2><p>集合类和数组不一样，数组元素既可以保存基本类型的值，也可以是对象，但是集合里只能保存对象，Java的集合类主要由两个接口派生而出：Collection和Map</p>
-<h3 id="集合遍历："><a href="#集合遍历：" class="headerlink" title="集合遍历："></a>集合遍历：</h3><p>可以通过Iterator遍历集合元素，它仅仅用于遍历集合，本身没有盛庄对象的能力，它依赖于Collection对象，若有一个Iterator对象，必然有一个与之关联的Collection对象<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Collection c = <span class="keyword">new</span> ArrayList();</div><div class="line">Iterator it = c.iterator();</div></pre></td></tr></table></figure></p>
-<p>可以使用foreach遍历集合<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Collection c = <span class="keyword">new</span> ArrayList();</div><div class="line"><span class="keyword">for</span>(Object obj : c)</div><div class="line">&#123;</div><div class="line">    <span class="comment">// 操作</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h3><p>Set不允许包含重复元素</p>
-<h4 id="HashSet："><a href="#HashSet：" class="headerlink" title="HashSet："></a>HashSet：</h4><ul>
-<li>元素无序(无序是指不能元素的排列顺序与添加顺序不同)</li>
-<li>不是同步的，多线程访问时需要通过代码来保证线程同步</li>
-<li>集合元素可以是null</li>
-<li>HashSet集合判断两个元素相等的标注是两个对象通过equal()方法比较相等，并且两个对象的hashCode()方法返回值也相等。</li>
-</ul>
-<p>如果要把某个类的对象保存在HashSet集合中时，重写这个类的equal()方法和hashCode()方法应该尽量保证一致性。重写hashCode()方法的基本规则如下：</p>
-<ul>
-<li>在程序运行过程中，同一个对象多次调用hashCode()方法应该返回相同的值。</li>
-<li>当两个对象通过equal()方法比较返回true时，hashCode()方法应该返回相同的值。</li>
-<li>当对象用作equal()方法比较标准的实例变量时，都应该用于计算hashCode值。<br>当像HashSet中添加可变对象时，必须十分小心，如果修改HashSet集合中的对象，有可能导致该对象与集合中的其他对象相等，从而导致HashSet无法准确访问该对象。</li>
-</ul>
-<h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><p>LinkedHashSet是HashSet的子类，它也是根据HashCode值来决定元素的存储位置，但它同时使用链表维护元素的次序，这样使得元素看起来是以插入顺序保存的。</p>
-<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p>TreeSet是SortedSet接口的实现类，它可以保证集合元素处于排序状态。TreeSet会调用集合元素的compareTo(Object obj)方法来比较元素之间的大小关系，然后将集合元素按升序排列。Java提供了一个Comparable接口，该接口定义了一个compareTo(Object obj)方法，改方法返回一个整数值，实现该接口的类的对象就可以比较大小。向TreeSet集合中添加的对象对应的类必须实现该接口，否则集合中元素超过一个就会引发ClassCastException异常。对于TreeSet而言，它判断两个对象是否相等的唯一标准是：两个对象通过compareTo(Object obj)方法比较的返回值是不是0。</p>
-<p>Java有两个关于比较的接口Comparable和Comparator，他们的区别如下：</p>
-<ul>
-<li>Java提供了只包含一个compareTo()方法的Comparable接口。这个方法可以个给两个对象排序。具体来说，它返回负数，0，正数来表明输入对象小于，等于，大于已经存在的对象。</li>
-<li>Java提供了包含compare()和equals()两个方法的Comparator接口。compare()方法用来给两个输入参数排序，返回负数，0，正数表明第一个参数是小于，等于，大于第二个参数。equals()方法需要一个对象作为参数，它用来决定输入参数是否和comparator相等。只有当输入参数也是一个comparator并且输入参数和当前comparator的排序结果是相同的时候，这个方法才返回true。</li>
-</ul>
-<h3 id="List集合"><a href="#List集合" class="headerlink" title="List集合"></a>List集合</h3><p>List集合代表一个元素有序。可重复的集合，集合中的每个元素都有其对应的索引。<br>Set只提供了一个iterator()，List还额外提供了一个ListIterator()方法，他们两的区别如下：</p>
-<ul>
-<li>Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。</li>
-<li>Iterator对集合只能是向后遍历，ListIterator既可以向后也可以向前。</li>
-<li>ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等。</li>
-</ul>
-<p>ArrayList和Vector都是基于数组实现的List类，它们封装了一个动态的、允许再分配的Object[]数组，当向其中添加的元素超过该数组的长度时，他们会自动增加容量。它们两者的显著区别就是：ArrayList是线程不安全的，当多个线程访问同一个ArrayList集合时，如果有一个线程修改了ArrayList集合，需要手动保证该集合的同步性。Vector是线程安全的，所以它的性能会低一些。<br>Array和ArrayList的不同点：</p>
-<ul>
-<li>Array可以包含基本类型和对象类型，ArrayList只能包含对象类型。</li>
-<li>Array大小是固定的，ArrayList的大小是动态变化的。</li>
-<li>ArrayList提供了更多的方法和特性，比如：addAll()，removeAll()，iterator()等等。</li>
-</ul>
-<p>LinkedList也是List接口的实现类，它使用链表的形式保存集合中的元素，因此随机访问时性能较差，但是插入删除元素性能出色。</p>
-<h3 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h3><p>Map用来保存键值对，key和value都可以是任何引用类型的数据，但是key不允许重复。<br>HashMap和Hashtable都是Map接口的典型实现类，他们两者的主要区别如下：</p>
-<ul>
-<li>HashMap允许键和值是null，而Hashtable不允许键或者值是null。</li>
-<li>Hashtable是同步的，而HashMap不是。因此，HashMap更适合于单线程环境，而Hashtable适合于多线程环境。</li>
-<li>HashMap提供了可供应用迭代的键的集合。</li>
-</ul>
-<p>HashMap里有一个LinkedHashMap子类，它使用双向链表来维护键值对的次序，该链表负责维护Map的迭代，迭代顺序与键值对的插入顺序一致。</p>
-
+        <p>题目要求：求n得阶乘末尾有几个连续的0<br>思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以当n&lt;25时，一共有n/5个质因子，当n=25时会有2个，即log(25)</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( n &lt; <span class="number">0</span> ) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">5</span>; n / i &gt;= <span class="number">1</span>; i *= <span class="number">5</span>) &#123;</div><div class="line">            count += n / i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -357,22 +313,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/刷题/" rel="tag">#刷题</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/02/深入理解Java的接口和抽象类/" rel="next" title="深入理解Java的接口和抽象类">
-                <i class="fa fa-chevron-left"></i> 深入理解Java的接口和抽象类
+              <a href="/2016/07/20/Implement-Queue-using-Stacks/" rel="next" title="Implement Queue using Stacks">
+                <i class="fa fa-chevron-left"></i> Implement Queue using Stacks
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/02/JavaScript编程风格/" rel="prev" title="JavaScript编程风格">
-                JavaScript编程风格 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -404,8 +362,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/02/Java集合/"
-           data-title="Java集合" data-url="http://yoursite.com/2016/04/02/Java集合/">
+      <div class="ds-thread" data-thread-key="2016/07/21/Factorial-Trailing-Zeroes/"
+           data-title="Factorial Trailing Zeroes" data-url="http://yoursite.com/2016/07/21/Factorial-Trailing-Zeroes/">
       </div>
     
   </div>
@@ -532,7 +490,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java集合"><span class="nav-number">1.</span> <span class="nav-text">Java集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合遍历："><span class="nav-number">1.1.</span> <span class="nav-text">集合遍历：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set集合"><span class="nav-number">1.2.</span> <span class="nav-text">Set集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet："><span class="nav-number">1.2.1.</span> <span class="nav-text">HashSet：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashSet"><span class="nav-number">1.2.2.</span> <span class="nav-text">LinkedHashSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.2.3.</span> <span class="nav-text">TreeSet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List集合"><span class="nav-number">1.3.</span> <span class="nav-text">List集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map集合"><span class="nav-number">1.4.</span> <span class="nav-text">Map集合</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

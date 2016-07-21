@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="面向对象," />
+  <meta name="keywords" content="刷题," />
 
 
 
@@ -57,16 +57,19 @@
 
 
 
-<meta name="description" content="对象初始化流程，根据一段代码来分析它：">
+<meta name="description" content="题目要求：求一棵二叉树从叶子节点到根节点的最小深度，即最短路径下的深度思路：和求树的深度类似，递归遍历这棵二叉树即可，注意必须是叶子节点到根节点，如果一棵树没有左子树，那么所有的最小深度应该是这个树的右子树的最小深度加1，如果左右子树都有，那么两者的最小深度里取最小再加1即可。
+1234567891011121314151617181920/** * Definition for a binary">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java对象的初始化顺序">
-<meta property="og:url" content="http://yoursite.com/2016/03/31/Java对象的初始化顺序/index.html">
+<meta property="og:title" content="Minimum Depth of Binary Tree">
+<meta property="og:url" content="http://yoursite.com/2016/07/21/Minimum-Depth-of-Binary-Tree/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="对象初始化流程，根据一段代码来分析它：">
-<meta property="og:updated_time" content="2016-07-16T01:53:25.000Z">
+<meta property="og:description" content="题目要求：求一棵二叉树从叶子节点到根节点的最小深度，即最短路径下的深度思路：和求树的深度类似，递归遍历这棵二叉树即可，注意必须是叶子节点到根节点，如果一棵树没有左子树，那么所有的最小深度应该是这个树的右子树的最小深度加1，如果左右子树都有，那么两者的最小深度里取最小再加1即可。
+1234567891011121314151617181920/** * Definition for a binary">
+<meta property="og:updated_time" content="2016-07-21T13:11:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java对象的初始化顺序">
-<meta name="twitter:description" content="对象初始化流程，根据一段代码来分析它：">
+<meta name="twitter:title" content="Minimum Depth of Binary Tree">
+<meta name="twitter:description" content="题目要求：求一棵二叉树从叶子节点到根节点的最小深度，即最短路径下的深度思路：和求树的深度类似，递归遍历这棵二叉树即可，注意必须是叶子节点到根节点，如果一棵树没有左子树，那么所有的最小深度应该是这个树的右子树的最小深度加1，如果左右子树都有，那么两者的最小深度里取最小再加1即可。
+1234567891011121314151617181920/** * Definition for a binary">
 
 
 
@@ -84,7 +87,7 @@
   };
 </script>
 
-  <title> Java对象的初始化顺序 | Phenix </title>
+  <title> Minimum Depth of Binary Tree | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +237,7 @@
             
             
               
-                Java对象的初始化顺序
+                Minimum Depth of Binary Tree
               
             
           </h1>
@@ -246,8 +249,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-31T09:53:40+08:00" content="2016-03-31">
-              2016-03-31
+            <time itemprop="dateCreated" datetime="2016-07-21T21:06:33+08:00" content="2016-07-21">
+              2016-07-21
             </time>
           </span>
 
@@ -260,8 +263,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
                   </a>
                 </span>
 
@@ -276,8 +279,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/31/Java对象的初始化顺序/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/Java对象的初始化顺序/" itemprop="commentsCount"></span>
+                <a href="/2016/07/21/Minimum-Depth-of-Binary-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/Minimum-Depth-of-Binary-Tree/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,26 +302,8 @@
       
 
       
-        <p><strong>对象初始化流程，根据一段代码来分析它：</strong><br><a id="more"></a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">*基类包含一静态变量、包含一实例变量</div><div class="line">*包含一个静态初始化块以及一个构造器</div><div class="line">*/</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a = <span class="number">10</span>;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> b = <span class="number">20</span>;</div><div class="line">	<span class="keyword">static</span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Static Init Base "</span> + a); <span class="comment">//System.out.println("Null Init " + b);</span></div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Base</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Init Base "</span> + <span class="keyword">this</span>.b); </div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">*一级子类和基类包含的内容一样</div><div class="line">*/</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">SuperClass</span> <span class="keyword">extends</span> <span class="title">Base</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a1 = getSuperStaticNumber(); <span class="keyword">public</span> <span class="keyword">int</span> b1 = getSuperInstanceNumber();</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SuperClass</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Init SuperClass"</span> + <span class="keyword">this</span>.b1); </div><div class="line">	&#125;</div><div class="line">	<span class="keyword">static</span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Static Init SuperClass"</span> + a1); </div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getSuperStaticNumber</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Static member init"</span>); </div><div class="line">		<span class="keyword">return</span> <span class="number">100</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSuperInstanceNumber</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Instance member init"</span>); </div><div class="line">		<span class="keyword">return</span> <span class="number">200</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">*二级子类为测试该代码的驱动类</div><div class="line">*/</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SubClass</span> <span class="keyword">extends</span> <span class="title">SuperClass</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> a2 = getStaticNumber();</div><div class="line">	<span class="keyword">public</span> <span class="keyword">int</span> b2 = getInstanceNumber();</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">SubClass</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Init SubClass "</span> + <span class="keyword">this</span>.b2);</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getStaticNumber</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Static member init Sub"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">1000</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getInstanceNumber</span><span class="params">()</span></span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Instance member init Sub"</span>);</div><div class="line">		<span class="keyword">return</span> <span class="number">2000</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">new</span> SubClass();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">static</span></div><div class="line">	&#123;</div><div class="line">		System.out.println(<span class="string">"Static Init "</span> + a2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p><strong>运行上述代码出现如下结果：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Static Init Base <span class="number">10</span></div><div class="line">Static member init</div><div class="line">Static Init SuperClass <span class="number">100</span></div><div class="line">Static member init Sub</div><div class="line">Static Init <span class="number">1000</span></div><div class="line">Init Base <span class="number">20</span></div><div class="line">Instance member init</div><div class="line">Init SuperClass <span class="number">200</span></div><div class="line">Instance member init Sub</div><div class="line">Init SubClass <span class="number">2000</span></div></pre></td></tr></table></figure>
-<h5 id="结果分析："><a href="#结果分析：" class="headerlink" title="结果分析："></a><strong>结果分析：</strong></h5><ol>
-<li>对象在初始化过程，JVM会先去搜索该类的顶级父类，直到搜索到我们所定义的<code>SubClass</code>继承树上直接继承于<code>Object</code>类的子类，在这里就是Base类；</li>
-<li>然后JVM会先加载<code>Base</code>类，然后初始化<code>Base</code>类的静态变量<code>a</code>，然后执行<code>Base</code>类的静态初始化块，按照这样第一句话会输出：<code>Static Init Base 10</code>【*：此时该类还未调用构造函数，构造函数是实例化的时候调用的】</li>
-<li>然后JVM按照继承树往下搜索，继续加载<code>Base</code>类的子类，按照静态成员函数-&gt;静态成员变量-&gt;静态初始化块的顺序往下递归，直到加载完我们使用的对象所在的类。</li>
-<li>类加载完了过后开始对类进行实例化操作，这个过程还是会先搜索到直接继承于<code>Object</code>类的子类，在这里就是<code>Base</code>类；</li>
-<li>JVM会实例化<code>Base</code>类的成员函数，然后实例化成员变量，最后调用<code>Base</code>类的构造函数；</li>
-<li>JVM会递归往继承树下边进行调用，顺序还是遵循：成员函数-&gt;成员变量-&gt;构造函数；</li>
-<li>最后直到<code>SubClass</code>类的构造函数调用完成</li>
-</ol>
-<h5 id="构造函数调用时注意的问题："><a href="#构造函数调用时注意的问题：" class="headerlink" title="构造函数调用时注意的问题："></a><strong>构造函数调用时注意的问题：</strong></h5><ol>
-<li>如果一个类的父类没有无参数构造函数，也就是说父类自定义了一个带参数的构造函数，那么系统不会提供无参数构造函数，此时子类在调用构造函数的时候必须最开始显示调用<code>super(param)</code>，因为在构造函数调用之前系统总会先去调用父类的构造函数</li>
-<li>若一个类定义的时候没有提供构造函数，JVM会自动为该类定义一个无参数的构造函数</li>
-<li>一个类在调用构造函数的时候，JVM隐藏了一句代码<code>super()</code>，前提是父类未定义构造函数或者显示定义了无参构造函数；其含义就是调用父类的构造函数，如果父类的无参数构造函数被覆盖的话需要在子类构造函数中显示调用父类带参数的构造函数</li>
-<li>当类中的成员函数遇到变量的时候，会先根据变量名在函数域即局部变量范围内去寻找该变量，如果找不到才会去寻找实例变量或者静态变量，其意思可以理解为局部变量可以和实例变量或者静态变量同名，而且会在函数调用过程优先使用，这个原因在于在函数范围内，如果调用的变量是实例变量，其中前缀<code>this.</code>被隐藏了。</li>
-</ol>
-
+        <p>题目要求：求一棵二叉树从叶子节点到根节点的最小深度，即最短路径下的深度<br>思路：和求树的深度类似，递归遍历这棵二叉树即可，注意必须是叶子节点到根节点，如果一棵树没有左子树，那么所有的最小深度应该是这个树的右子树的最小深度加1，如果左右子树都有，那么两者的最小深度里取最小再加1即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) </div><div class="line">        	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(root.left == <span class="keyword">null</span>) </div><div class="line">        	<span class="keyword">return</span> minDepth(root.right) + <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(root.right == <span class="keyword">null</span>) </div><div class="line">        	<span class="keyword">return</span> minDepth(root.left) + <span class="number">1</span>;</div><div class="line">        <span class="keyword">return</span> Math.min(minDepth(root.left), minDepth(root.right)) + <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -332,7 +317,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/面向对象/" rel="tag">#面向对象</a>
+            <a href="/tags/刷题/" rel="tag">#刷题</a>
           
         </div>
       
@@ -341,17 +326,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/31/VIM常用命令/" rel="next" title="VIM常用命令">
-                <i class="fa fa-chevron-left"></i> VIM常用命令
+              <a href="/2016/07/21/Guess-Number-Higher-or-Lower/" rel="next" title="Guess Number Higher or Lower">
+                <i class="fa fa-chevron-left"></i> Guess Number Higher or Lower
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/02/深入理解Java的接口和抽象类/" rel="prev" title="深入理解Java的接口和抽象类">
-                深入理解Java的接口和抽象类 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -383,8 +364,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/31/Java对象的初始化顺序/"
-           data-title="Java对象的初始化顺序" data-url="http://yoursite.com/2016/03/31/Java对象的初始化顺序/">
+      <div class="ds-thread" data-thread-key="2016/07/21/Minimum-Depth-of-Binary-Tree/"
+           data-title="Minimum Depth of Binary Tree" data-url="http://yoursite.com/2016/07/21/Minimum-Depth-of-Binary-Tree/">
       </div>
     
   </div>
@@ -511,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#结果分析："><span class="nav-number">1.</span> <span class="nav-text">结果分析：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数调用时注意的问题："><span class="nav-number">2.</span> <span class="nav-text">构造函数调用时注意的问题：</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

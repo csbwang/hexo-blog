@@ -57,16 +57,25 @@
 
 
 
-<meta name="description" content="题目要求：使用栈实现队列思路：借助两个栈，一个作为入队时的中转即可，注意java中Stack的使用">
+<meta name="description" content="题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字思路：实际上就是一个二分查找问题，但是这里需要注意两点 
+
+mid=(left+right)/2会有越界的可能
+left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Implement Queue using Stacks">
-<meta property="og:url" content="http://yoursite.com/2016/07/20/Implement-Queue-using-Stacks/index.html">
+<meta property="og:title" content="Guess Number Higher or Lower">
+<meta property="og:url" content="http://yoursite.com/2016/07/21/Guess-Number-Higher-or-Lower/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：使用栈实现队列思路：借助两个栈，一个作为入队时的中转即可，注意java中Stack的使用">
-<meta property="og:updated_time" content="2016-07-20T13:38:48.000Z">
+<meta property="og:description" content="题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字思路：实际上就是一个二分查找问题，但是这里需要注意两点 
+
+mid=(left+right)/2会有越界的可能
+left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环">
+<meta property="og:updated_time" content="2016-07-21T12:51:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Implement Queue using Stacks">
-<meta name="twitter:description" content="题目要求：使用栈实现队列思路：借助两个栈，一个作为入队时的中转即可，注意java中Stack的使用">
+<meta name="twitter:title" content="Guess Number Higher or Lower">
+<meta name="twitter:description" content="题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字思路：实际上就是一个二分查找问题，但是这里需要注意两点 
+
+mid=(left+right)/2会有越界的可能
+left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环">
 
 
 
@@ -84,7 +93,7 @@
   };
 </script>
 
-  <title> Implement Queue using Stacks | Phenix </title>
+  <title> Guess Number Higher or Lower | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +243,7 @@
             
             
               
-                Implement Queue using Stacks
+                Guess Number Higher or Lower
               
             
           </h1>
@@ -246,8 +255,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-20T21:36:58+08:00" content="2016-07-20">
-              2016-07-20
+            <time itemprop="dateCreated" datetime="2016-07-21T20:46:06+08:00" content="2016-07-21">
+              2016-07-21
             </time>
           </span>
 
@@ -276,8 +285,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/20/Implement-Queue-using-Stacks/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/20/Implement-Queue-using-Stacks/" itemprop="commentsCount"></span>
+                <a href="/2016/07/21/Guess-Number-Higher-or-Lower/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/Guess-Number-Higher-or-Lower/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,9 +308,13 @@
       
 
       
-        <p>题目要求：使用栈实现队列<br>思路：借助两个栈，一个作为入队时的中转即可，注意java中Stack的使用</p>
+        <p>题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字<br>思路：实际上就是一个二分查找问题，但是这里需要注意两点 </p>
+<ol>
+<li>mid=(left+right)/2会有越界的可能</li>
+<li>left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环</li>
+</ol>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</div><div class="line">    Stack stmp = <span class="keyword">new</span> Stack();</div><div class="line">    Stack sq = <span class="keyword">new</span> Stack();</div><div class="line">    <span class="comment">// Push element x to the back of queue.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> tmp;</div><div class="line">        <span class="keyword">while</span>(!sq.empty())&#123;</div><div class="line">            <span class="comment">//tmp = sq.pop();</span></div><div class="line">            stmp.push(sq.pop());</div><div class="line">        &#125;</div><div class="line">        sq.push(<span class="keyword">new</span> Integer(x));</div><div class="line">        <span class="keyword">while</span>(!stmp.empty())&#123;</div><div class="line">            <span class="comment">//tmp = stmp.pop();</span></div><div class="line">            sq.push(stmp.pop());</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">// Removes the element from in front of queue.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">        sq.pop();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Get the front element.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> (Integer)sq.peek();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Return whether the queue is empty.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> sq.isEmpty();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* The guess API is defined in the parent class GuessGame.</span></div><div class="line">   @param num, your guess</div><div class="line">   @return -1 if my number is lower, 1 if my number is higher, otherwise return 0</div><div class="line">      int guess(int num); */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> <span class="keyword">extends</span> <span class="title">GuessGame</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">guessNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> left = <span class="number">1</span>, right = n;</div><div class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</div><div class="line">            <span class="comment">//int mid = (left + right) &gt;&gt; 1; // 两者直接求和可能会越界</span></div><div class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">int</span> g = guess(mid);</div><div class="line">            <span class="keyword">if</span>(g == <span class="number">0</span>) <span class="keyword">return</span> mid;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">if</span>(g == <span class="number">1</span>) left = mid + <span class="number">1</span>;</div><div class="line">                <span class="keyword">else</span> right = mid - <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> left;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -324,17 +337,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/20/Sum-of-Two/" rel="next" title="Sum of Two">
-                <i class="fa fa-chevron-left"></i> Sum of Two
+              <a href="/2016/07/21/Path-Sum/" rel="next" title="Path Sum">
+                <i class="fa fa-chevron-left"></i> Path Sum
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/21/Factorial-Trailing-Zeroes/" rel="prev" title="Factorial Trailing Zeroes">
-                Factorial Trailing Zeroes <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,8 +375,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/20/Implement-Queue-using-Stacks/"
-           data-title="Implement Queue using Stacks" data-url="http://yoursite.com/2016/07/20/Implement-Queue-using-Stacks/">
+      <div class="ds-thread" data-thread-key="2016/07/21/Guess-Number-Higher-or-Lower/"
+           data-title="Guess Number Higher or Lower" data-url="http://yoursite.com/2016/07/21/Guess-Number-Higher-or-Lower/">
       </div>
     
   </div>

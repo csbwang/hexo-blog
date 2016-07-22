@@ -57,25 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字思路：实际上就是一个二分查找问题，但是这里需要注意两点 
-
-mid=(left+right)/2会有越界的可能
-left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环">
+<meta name="description" content="题目要求：使用队列实现栈思路：借助两个队列，一个作为入栈时的中转即可，注意java中Queue的使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Guess Number Higher or Lower">
-<meta property="og:url" content="http://yoursite.com/2016/07/21/Guess-Number-Higher-or-Lower/index.html">
+<meta property="og:title" content="Implement Stack using Queues">
+<meta property="og:url" content="http://yoursite.com/2016/07/22/Implement-Stack-using-Queues/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字思路：实际上就是一个二分查找问题，但是这里需要注意两点 
-
-mid=(left+right)/2会有越界的可能
-left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环">
-<meta property="og:updated_time" content="2016-07-21T12:51:23.000Z">
+<meta property="og:description" content="题目要求：使用队列实现栈思路：借助两个队列，一个作为入栈时的中转即可，注意java中Queue的使用">
+<meta property="og:updated_time" content="2016-07-22T15:21:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Guess Number Higher or Lower">
-<meta name="twitter:description" content="题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字思路：实际上就是一个二分查找问题，但是这里需要注意两点 
-
-mid=(left+right)/2会有越界的可能
-left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环">
+<meta name="twitter:title" content="Implement Stack using Queues">
+<meta name="twitter:description" content="题目要求：使用队列实现栈思路：借助两个队列，一个作为入栈时的中转即可，注意java中Queue的使用">
 
 
 
@@ -93,7 +84,7 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
   };
 </script>
 
-  <title> Guess Number Higher or Lower | Phenix </title>
+  <title> Implement Stack using Queues | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +234,7 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
             
             
               
-                Guess Number Higher or Lower
+                Implement Stack using Queues
               
             
           </h1>
@@ -255,8 +246,8 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T20:46:06+08:00" content="2016-07-21">
-              2016-07-21
+            <time itemprop="dateCreated" datetime="2016-07-22T23:04:45+08:00" content="2016-07-22">
+              2016-07-22
             </time>
           </span>
 
@@ -285,8 +276,8 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/21/Guess-Number-Higher-or-Lower/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/Guess-Number-Higher-or-Lower/" itemprop="commentsCount"></span>
+                <a href="/2016/07/22/Implement-Stack-using-Queues/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/22/Implement-Stack-using-Queues/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,13 +299,11 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
       
 
       
-        <p>题目要求：猜数字，给你一个区间，让你猜数字，你说一个数字，它通过告诉你是高了还是低了来让你调整，直到猜中数字<br>思路：实际上就是一个二分查找问题，但是这里需要注意两点 </p>
-<ol>
-<li>mid=(left+right)/2会有越界的可能</li>
-<li>left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除问题进入死循环</li>
-</ol>
+        <p>题目要求：使用队列实现栈<br>思路：借助两个队列，一个作为入栈时的中转即可，注意java中Queue的使用</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* The guess API is defined in the parent class GuessGame.</span></div><div class="line">   @param num, your guess</div><div class="line">   @return -1 if my number is lower, 1 if my number is higher, otherwise return 0</div><div class="line">      int guess(int num); */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> <span class="keyword">extends</span> <span class="title">GuessGame</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">guessNumber</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> left = <span class="number">1</span>, right = n;</div><div class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</div><div class="line">            <span class="comment">//int mid = (left + right) &gt;&gt; 1; // 两者直接求和可能会越界</span></div><div class="line">            <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">int</span> g = guess(mid);</div><div class="line">            <span class="keyword">if</span>(g == <span class="number">0</span>) <span class="keyword">return</span> mid;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">if</span>(g == <span class="number">1</span>) left = mid + <span class="number">1</span>;</div><div class="line">                <span class="keyword">else</span> right = mid - <span class="number">1</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> left;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>###Java中Queue的使用<br>在Java中，没有现成的Queue使用，可以通过LinkedList模拟队列的使用，其使用如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//定义</span></div><div class="line">Queue&lt;Integer&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line"><span class="comment">//增加一个元索，如果队列已满，则抛出一个IIIegaISlabEepeplian异常</span></div><div class="line">queue.add(x); </div><div class="line"><span class="comment">//移除并返回队列头部的元素，如果队列为空，则抛出一个NoSuchElementException异常</span></div><div class="line">queue.remove();</div><div class="line"><span class="comment">//返回队列头部的元素，如果队列为空，则抛出一个NoSuchElementException异常</span></div><div class="line">queue.element(x);</div><div class="line"></div><div class="line"><span class="comment">//添加一个元素并返回true，如果队列已满，则返回false</span></div><div class="line">queue.offer();</div><div class="line"><span class="comment">//移除并返问队列头部的元素，如果队列为空，则返回null</span></div><div class="line">queue.poll();</div><div class="line"><span class="comment">//返回队列头部的元素，如果队列为空，则返回null</span></div><div class="line">queue.peek();</div><div class="line"><span class="comment">//添加一个元素，如果队列满，则阻塞</span></div><div class="line">queue.put(x);</div><div class="line"><span class="comment">//移除并返回队列头部的元素，如果队列为空，则阻塞</span></div><div class="line">queue.take();</div><div class="line"><span class="comment">//判空</span></div><div class="line">queue.isEmpty();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> </span>&#123;</div><div class="line">    Queue&lt;Integer&gt; tmpQueue = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">    Queue&lt;Integer&gt; mainQueue = <span class="keyword">new</span> LinkedList&lt;&gt;();</div><div class="line">    <span class="comment">// Push element x onto stack.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(tmpQueue.isEmpty())&#123;</div><div class="line">            mainQueue.offer(x);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            tmpQueue.offer(x);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">	<span class="comment">// Removes the element on top of the stack.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(tmpQueue.isEmpty())&#123;</div><div class="line">            <span class="keyword">while</span>(mainQueue.size() &gt; <span class="number">1</span>)&#123;</div><div class="line">                tmpQueue.offer(mainQueue.poll());</div><div class="line">            &#125;</div><div class="line">            mainQueue.poll();</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">while</span>(tmpQueue.size() &gt; <span class="number">1</span>)&#123;</div><div class="line">                mainQueue.offer(tmpQueue.poll());</div><div class="line">            &#125;</div><div class="line">            tmpQueue.poll();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// pop2提供另外一种思路，当队列的size不好求时，方便操作</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop2</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> tmp;</div><div class="line">        <span class="keyword">if</span>(tmpQueue.isEmpty())&#123;</div><div class="line">            tmp = mainQueue.poll();</div><div class="line">            <span class="keyword">while</span>(!mainQueue.isEmpty())&#123;</div><div class="line">                tmpQueue.offer(tmp);</div><div class="line">                tmp = mainQueue.poll();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            tmp = tmpQueue.poll();</div><div class="line">            <span class="keyword">while</span>(!tmpQueue.isEmpty())&#123;</div><div class="line">                mainQueue.offer(tmp);</div><div class="line">                tmp = tmpQueue.poll();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Get the top element.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> top = <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(tmpQueue.isEmpty())&#123;</div><div class="line">            <span class="keyword">while</span>(!mainQueue.isEmpty())&#123;</div><div class="line">                top = mainQueue.poll();</div><div class="line">                tmpQueue.offer(top);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">while</span>(!tmpQueue.isEmpty())&#123;</div><div class="line">                top = tmpQueue.poll();</div><div class="line">                mainQueue.offer(top);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> top;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">// Return whether the stack is empty.</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> tmpQueue.isEmpty() &amp;&amp; mainQueue.isEmpty();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -337,17 +326,13 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/21/Path-Sum/" rel="next" title="Path Sum">
-                <i class="fa fa-chevron-left"></i> Path Sum
+              <a href="/2016/07/22/Bulls-and-Cows/" rel="next" title="Bulls and Cows">
+                <i class="fa fa-chevron-left"></i> Bulls and Cows
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/21/Minimum-Depth-of-Binary-Tree/" rel="prev" title="Minimum Depth of Binary Tree">
-                Minimum Depth of Binary Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -379,8 +364,8 @@ left=mid+1，right=mid-1，不能直接用mid替换，否则可能因为整除�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/21/Guess-Number-Higher-or-Lower/"
-           data-title="Guess Number Higher or Lower" data-url="http://yoursite.com/2016/07/21/Guess-Number-Higher-or-Lower/">
+      <div class="ds-thread" data-thread-key="2016/07/22/Implement-Stack-using-Queues/"
+           data-title="Implement Stack using Queues" data-url="http://yoursite.com/2016/07/22/Implement-Stack-using-Queues/">
       </div>
     
   </div>

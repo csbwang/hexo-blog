@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：判断一个树是不是镜像树思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。">
+<meta name="description" content="题目要求：给定两个字符串s和t，如果s可以通过t替换得到，则返回true，否则返回false，比如egg可以通过将add中的a换成e，将d换成g得到，到时foo不能通过bar替换得到，paper可以通过title替换得到思路：建立替换的映射字典，要求前后的替换要一致，所以要进行双向映射，s中的a可以替换得到t中的b，那么t中的b也只能由s中的a替换得到，”aa”-&amp;gt;”ab”和”ab”-&amp;gt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Symmetric Tree">
-<meta property="og:url" content="http://yoursite.com/2016/07/16/Symmetric Tree/index.html">
+<meta property="og:title" content="Isomorphic-Strings">
+<meta property="og:url" content="http://yoursite.com/2016/07/23/Isomorphic-Strings/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：判断一个树是不是镜像树思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。">
-<meta property="og:updated_time" content="2016-07-16T15:48:12.000Z">
+<meta property="og:description" content="题目要求：给定两个字符串s和t，如果s可以通过t替换得到，则返回true，否则返回false，比如egg可以通过将add中的a换成e，将d换成g得到，到时foo不能通过bar替换得到，paper可以通过title替换得到思路：建立替换的映射字典，要求前后的替换要一致，所以要进行双向映射，s中的a可以替换得到t中的b，那么t中的b也只能由s中的a替换得到，”aa”-&amp;gt;”ab”和”ab”-&amp;gt">
+<meta property="og:updated_time" content="2016-07-23T10:33:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Symmetric Tree">
-<meta name="twitter:description" content="题目要求：判断一个树是不是镜像树思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。">
+<meta name="twitter:title" content="Isomorphic-Strings">
+<meta name="twitter:description" content="题目要求：给定两个字符串s和t，如果s可以通过t替换得到，则返回true，否则返回false，比如egg可以通过将add中的a换成e，将d换成g得到，到时foo不能通过bar替换得到，paper可以通过title替换得到思路：建立替换的映射字典，要求前后的替换要一致，所以要进行双向映射，s中的a可以替换得到t中的b，那么t中的b也只能由s中的a替换得到，”aa”-&amp;gt;”ab”和”ab”-&amp;gt">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Symmetric Tree | Phenix </title>
+  <title> Isomorphic-Strings | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +234,7 @@
             
             
               
-                Symmetric Tree
+                Isomorphic-Strings
               
             
           </h1>
@@ -246,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-16T23:32:21+08:00" content="2016-07-16">
-              2016-07-16
+            <time itemprop="dateCreated" datetime="2016-07-23T18:21:22+08:00" content="2016-07-23">
+              2016-07-23
             </time>
           </span>
 
@@ -276,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/16/Symmetric Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/16/Symmetric Tree/" itemprop="commentsCount"></span>
+                <a href="/2016/07/23/Isomorphic-Strings/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/23/Isomorphic-Strings/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,9 +299,9 @@
       
 
       
-        <p>题目要求：判断一个树是不是镜像树<br>思路：直接对一个树进行判断不好做，可以先对两个树进行判断，看这两个树是不是镜像对称，这样可以方便使用递归进行，然后对一个树的左右子树进行镜像对称判断即可。</p>
+        <p>题目要求：给定两个字符串s和t，如果s可以通过t替换得到，则返回true，否则返回false，比如egg可以通过将add中的a换成e，将d换成g得到，到时foo不能通过bar替换得到，paper可以通过title替换得到<br>思路：建立替换的映射字典，要求前后的替换要一致，所以要进行双向映射，s中的a可以替换得到t中的b，那么t中的b也只能由s中的a替换得到，”aa”-&gt;”ab”和”ab”-&gt;”aa”这种替换都是不符合要求的。</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isDC</span><span class="params">(TreeNode rootP, TreeNode rootQ)</span></span>&#123;</div><div class="line">        <span class="keyword">if</span>(rootP == <span class="keyword">null</span> &amp;&amp; rootQ == <span class="keyword">null</span>) </div><div class="line">        	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span>(rootP != <span class="keyword">null</span> &amp;&amp; rootQ != <span class="keyword">null</span> &amp;&amp; rootP.val == rootQ.val) </div><div class="line">        	<span class="keyword">return</span> isDC(rootP.left, rootQ.right) &amp;&amp; isDC(rootP.right, rootQ.left);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span> || (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>)) </div><div class="line">        	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">return</span> isDC(root.left, root.right);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIsomorphic</span><span class="params">(String s, String t)</span> </span>&#123;</div><div class="line">        <span class="keyword">char</span>[] charArrS = s.toCharArray();</div><div class="line">        <span class="keyword">char</span>[] charArrT = t.toCharArray();</div><div class="line">        Map&lt;Character, Character&gt; t2s = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">        Map&lt;Character, Character&gt; s2t = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; charArrS.length; i++)&#123;</div><div class="line">            <span class="keyword">if</span>(!t2s.containsKey(charArrT[i]))&#123;</div><div class="line">                <span class="keyword">if</span>(s2t.containsKey(charArrS[i]) &amp;&amp; s2t.get(charArrS[i]) != charArrT[i]) </div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                t2s.put(charArrT[i], charArrS[i]);</div><div class="line">                s2t.put(charArrS[i], charArrT[i]);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span> </div><div class="line">                <span class="keyword">if</span>(t2s.get(charArrT[i]) != charArrS[i])</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -325,17 +325,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/15/Linked-List-Cycle/" rel="next" title="Linked List Cycle">
-                <i class="fa fa-chevron-left"></i> Linked List Cycle
+              <a href="/2016/07/22/Implement-Stack-using-Queues/" rel="next" title="Implement Stack using Queues">
+                <i class="fa fa-chevron-left"></i> Implement Stack using Queues
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/17/Balanced Binary Tree/" rel="prev" title="Balanced Binary Tree">
-                Balanced Binary Tree <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,8 +363,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/16/Symmetric Tree/"
-           data-title="Symmetric Tree" data-url="http://yoursite.com/2016/07/16/Symmetric Tree/">
+      <div class="ds-thread" data-thread-key="2016/07/23/Isomorphic-Strings/"
+           data-title="Isomorphic-Strings" data-url="http://yoursite.com/2016/07/23/Isomorphic-Strings/">
       </div>
     
   </div>

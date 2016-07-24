@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="刷题," />
+  <meta name="keywords" content="刷题,Java,算法," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：求n得阶乘末尾有几个连续的0。思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以一共有25/5+25/2">
+<meta name="description" content="题目要求：求两个矩形并起来的的面积思路：先分别求出两个矩形的面积，然后求和，如果两个矩形有重合的部分，再将重合部分的面积减去，注意求重合部分面积时有会分好几种情况，总结下来，重合部分矩形的长度就是两个矩形右边顶点的最小值减去两个矩形左边顶点的的最大值，高度就是两个矩形上边顶点的最小值减去两个矩形下边顶点的最大值。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Factorial Trailing Zeroes">
-<meta property="og:url" content="http://yoursite.com/2016/07/21/Factorial-Trailing-Zeroes/index.html">
+<meta property="og:title" content="Rectangle Area">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/Rectangle-Area/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：求n得阶乘末尾有几个连续的0。思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以一共有25/5+25/2">
-<meta property="og:updated_time" content="2016-07-21T09:34:39.000Z">
+<meta property="og:description" content="题目要求：求两个矩形并起来的的面积思路：先分别求出两个矩形的面积，然后求和，如果两个矩形有重合的部分，再将重合部分的面积减去，注意求重合部分面积时有会分好几种情况，总结下来，重合部分矩形的长度就是两个矩形右边顶点的最小值减去两个矩形左边顶点的的最大值，高度就是两个矩形上边顶点的最小值减去两个矩形下边顶点的最大值。">
+<meta property="og:updated_time" content="2016-07-24T02:30:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Factorial Trailing Zeroes">
-<meta name="twitter:description" content="题目要求：求n得阶乘末尾有几个连续的0。思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以一共有25/5+25/2">
+<meta name="twitter:title" content="Rectangle Area">
+<meta name="twitter:description" content="题目要求：求两个矩形并起来的的面积思路：先分别求出两个矩形的面积，然后求和，如果两个矩形有重合的部分，再将重合部分的面积减去，注意求重合部分面积时有会分好几种情况，总结下来，重合部分矩形的长度就是两个矩形右边顶点的最小值减去两个矩形左边顶点的的最大值，高度就是两个矩形上边顶点的最小值减去两个矩形下边顶点的最大值。">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Factorial Trailing Zeroes | Phenix </title>
+  <title> Rectangle Area | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +234,7 @@
             
             
               
-                Factorial Trailing Zeroes
+                Rectangle Area
               
             
           </h1>
@@ -246,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-21T17:17:39+08:00" content="2016-07-21">
-              2016-07-21
+            <time itemprop="dateCreated" datetime="2016-07-24T10:19:11+08:00" content="2016-07-24">
+              2016-07-24
             </time>
           </span>
 
@@ -276,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/21/Factorial-Trailing-Zeroes/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/Factorial-Trailing-Zeroes/" itemprop="commentsCount"></span>
+                <a href="/2016/07/24/Rectangle-Area/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/Rectangle-Area/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,9 +299,9 @@
       
 
       
-        <p>题目要求：求n得阶乘末尾有几个连续的0。<br>思路：直接暴力先求阶乘，然后求末尾连续的0，当n比较大时会溢出，所以要寻找规律，我们可以发现，n!的质因子中5和2一起会构成10，所以只需要找到n!中一共出现了多少对(5,2)，又因为2出现的个数总是多余5，所以只需要求n!质因子中5的个数即可。例如n=25，会产生5的质因子的数为25，20，15，10，5，其中25会产生两个5，所以一共有25/5+25/25个5，同理n=125时，有125/5+125/25+125/125个5。</p>
+        <p>题目要求：求两个矩形并起来的的面积<br>思路：先分别求出两个矩形的面积，然后求和，如果两个矩形有重合的部分，再将重合部分的面积减去，注意求重合部分面积时有会分好几种情况，总结下来，重合部分矩形的长度就是两个矩形右边顶点的最小值减去两个矩形左边顶点的的最大值，高度就是两个矩形上边顶点的最小值减去两个矩形下边顶点的最大值。</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trailingZeroes</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( n &lt; <span class="number">0</span> ) <span class="keyword">return</span> -<span class="number">1</span>;</div><div class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">5</span>; n / i &gt;= <span class="number">1</span>; i *= <span class="number">5</span>) &#123;</div><div class="line">            count += n / i;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> count;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">computeArea</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B, <span class="keyword">int</span> C, <span class="keyword">int</span> D, <span class="keyword">int</span> E, <span class="keyword">int</span> F, <span class="keyword">int</span> G, <span class="keyword">int</span> H)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> area = (D - B) * (C - A) + (H - F) * (G - E);</div><div class="line">        <span class="keyword">if</span> (A &gt;= G || B &gt;= H || C &lt;= E || D &lt;= F)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">return</span> area;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> top = Math.min(D, H);</div><div class="line">        <span class="keyword">int</span> right = Math.min(C, G);</div><div class="line">        <span class="keyword">int</span> bottom = Math.max(B, F);</div><div class="line">        <span class="keyword">int</span> left = Math.max(A, E);</div><div class="line">        <span class="keyword">return</span> area - (top - bottom) * (right - left);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -317,6 +317,10 @@
           
             <a href="/tags/刷题/" rel="tag">#刷题</a>
           
+            <a href="/tags/Java/" rel="tag">#Java</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
+          
         </div>
       
 
@@ -324,17 +328,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/20/Implement-Queue-using-Stacks/" rel="next" title="Implement Queue using Stacks">
-                <i class="fa fa-chevron-left"></i> Implement Queue using Stacks
+              <a href="/2016/07/23/Isomorphic-Strings/" rel="next" title="Isomorphic-Strings">
+                <i class="fa fa-chevron-left"></i> Isomorphic-Strings
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/21/Path-Sum/" rel="prev" title="Path Sum">
-                Path Sum <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,8 +366,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/21/Factorial-Trailing-Zeroes/"
-           data-title="Factorial Trailing Zeroes" data-url="http://yoursite.com/2016/07/21/Factorial-Trailing-Zeroes/">
+      <div class="ds-thread" data-thread-key="2016/07/24/Rectangle-Area/"
+           data-title="Rectangle Area" data-url="http://yoursite.com/2016/07/24/Rectangle-Area/">
       </div>
     
   </div>

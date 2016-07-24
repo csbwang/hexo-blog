@@ -57,28 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：求两个链表相交时的起始交点思路：
-
-暴力解法，依次使用第一个链表中的结点和第二个链表中的结点进行比较，时间复杂度太大
-hash的思想，使用第一个链表建立hash表，然后从第二个链表中寻找最先出现在hash表中的结点
-使用两个指针，先让比较长的链表的头指针移动到和另一个链表后面节点等长的位置，然后两个指针再一起后移，同时进行比较。">
+<meta name="description" content="题目要求：给定一个模式串，判断一个字符串是否符合这个模式规则，字符串中的每个部分使用空格分隔思路：这道题和Isomorphic-Strings思路类似，使用字典做映射，并确保映射是双向的即可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Intersection of Two Linked Lists">
-<meta property="og:url" content="http://yoursite.com/2016/07/24/Intersection-of-Two-Linked-Lists/index.html">
+<meta property="og:title" content="Word Pattern">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/Word-Pattern/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：求两个链表相交时的起始交点思路：
-
-暴力解法，依次使用第一个链表中的结点和第二个链表中的结点进行比较，时间复杂度太大
-hash的思想，使用第一个链表建立hash表，然后从第二个链表中寻找最先出现在hash表中的结点
-使用两个指针，先让比较长的链表的头指针移动到和另一个链表后面节点等长的位置，然后两个指针再一起后移，同时进行比较。">
-<meta property="og:updated_time" content="2016-07-24T05:00:02.000Z">
+<meta property="og:description" content="题目要求：给定一个模式串，判断一个字符串是否符合这个模式规则，字符串中的每个部分使用空格分隔思路：这道题和Isomorphic-Strings思路类似，使用字典做映射，并确保映射是双向的即可">
+<meta property="og:updated_time" content="2016-07-24T06:06:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Intersection of Two Linked Lists">
-<meta name="twitter:description" content="题目要求：求两个链表相交时的起始交点思路：
-
-暴力解法，依次使用第一个链表中的结点和第二个链表中的结点进行比较，时间复杂度太大
-hash的思想，使用第一个链表建立hash表，然后从第二个链表中寻找最先出现在hash表中的结点
-使用两个指针，先让比较长的链表的头指针移动到和另一个链表后面节点等长的位置，然后两个指针再一起后移，同时进行比较。">
+<meta name="twitter:title" content="Word Pattern">
+<meta name="twitter:description" content="题目要求：给定一个模式串，判断一个字符串是否符合这个模式规则，字符串中的每个部分使用空格分隔思路：这道题和Isomorphic-Strings思路类似，使用字典做映射，并确保映射是双向的即可">
 
 
 
@@ -96,7 +84,7 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
   };
 </script>
 
-  <title> Intersection of Two Linked Lists | Phenix </title>
+  <title> Word Pattern | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +234,7 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
             
             
               
-                Intersection of Two Linked Lists
+                Word Pattern
               
             
           </h1>
@@ -258,7 +246,7 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T12:46:41+08:00" content="2016-07-24">
+            <time itemprop="dateCreated" datetime="2016-07-24T14:01:40+08:00" content="2016-07-24">
               2016-07-24
             </time>
           </span>
@@ -288,8 +276,8 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/24/Intersection-of-Two-Linked-Lists/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/Intersection-of-Two-Linked-Lists/" itemprop="commentsCount"></span>
+                <a href="/2016/07/24/Word-Pattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/Word-Pattern/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -311,14 +299,9 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
       
 
       
-        <p>题目要求：求两个链表相交时的起始交点<br>思路：</p>
-<ol>
-<li>暴力解法，依次使用第一个链表中的结点和第二个链表中的结点进行比较，时间复杂度太大</li>
-<li>hash的思想，使用第一个链表建立hash表，然后从第二个链表中寻找最先出现在hash表中的结点</li>
-<li>使用两个指针，先让比较长的链表的头指针移动到和另一个链表后面节点等长的位置，然后两个指针再一起后移，同时进行比较。</li>
-</ol>
+        <p>题目要求：给定一个模式串，判断一个字符串是否符合这个模式规则，字符串中的每个部分使用空格分隔<br>思路：这道题和<em>Isomorphic-Strings</em>思路类似，使用字典做映射，并确保映射是双向的即可</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * public class ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode next;</div><div class="line"> *     ListNode(int x) &#123;</div><div class="line"> *         val = x;</div><div class="line"> *         next = null;</div><div class="line"> *     &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">getIntersectionNode</span><span class="params">(ListNode headA, ListNode headB)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(headA == <span class="keyword">null</span> || headB == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        ListNode tmpA = headA;</div><div class="line">        ListNode tmpB = headB;</div><div class="line">        <span class="keyword">int</span> lenA = <span class="number">1</span>, lenB = <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(tmpA.next != <span class="keyword">null</span>)&#123;</div><div class="line">            lenA++;</div><div class="line">            tmpA = tmpA.next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span>(tmpB.next != <span class="keyword">null</span>)&#123;</div><div class="line">            lenB++;</div><div class="line">            tmpB = tmpB.next;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 如果没有交点，直接返回</span></div><div class="line">        <span class="keyword">if</span>(tmpA != tmpB) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        tmpA = headA;</div><div class="line">        tmpB = headB;</div><div class="line">        <span class="comment">// 让多出来的节点，先移几步，使两者等长，因为如果交叉，交叉节点肯定不会在前面这些多出来的节点中</span></div><div class="line">        <span class="keyword">if</span>(lenA &lt; lenB)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenB - lenA; i++)&#123;</div><div class="line">                tmpB = tmpB.next;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(lenA &gt; lenB)&#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lenA - lenB; i++)&#123;</div><div class="line">                tmpA = tmpA.next;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 同步走，同时判断是否是交点</span></div><div class="line">        <span class="keyword">while</span>(tmpA != <span class="keyword">null</span>)&#123;</div><div class="line">            <span class="keyword">if</span>(tmpA == tmpB) <span class="keyword">return</span> tmpA;</div><div class="line">            tmpA = tmpA.next;</div><div class="line">            tmpB = tmpB.next;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">wordPattern</span><span class="params">(String pattern, String str)</span> </span>&#123;</div><div class="line">        <span class="keyword">char</span>[] patternArr = pattern.toCharArray();</div><div class="line">        String[] strArr = str.split(<span class="string">" "</span>);</div><div class="line">        <span class="keyword">int</span> pLen = patternArr.length, strLen = strArr.length;</div><div class="line">        <span class="keyword">if</span>(pLen != strLen) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        Map&lt;Character, String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</div><div class="line">        Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; pLen; i++)&#123;</div><div class="line">            <span class="keyword">if</span>(!map.containsKey(patternArr[i]))&#123;</div><div class="line">                map.put(patternArr[i], strArr[i]);</div><div class="line">                <span class="keyword">if</span>(set.contains(strArr[i])) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                set.add(strArr[i]);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>&#123;</div><div class="line">                <span class="keyword">if</span>(!map.get(patternArr[i]).equals(strArr[i]))</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -346,17 +329,13 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/24/Rectangle-Area/" rel="next" title="Rectangle Area">
-                <i class="fa fa-chevron-left"></i> Rectangle Area
+              <a href="/2016/07/24/Intersection-of-Two-Linked-Lists/" rel="next" title="Intersection of Two Linked Lists">
+                <i class="fa fa-chevron-left"></i> Intersection of Two Linked Lists
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/24/Word-Pattern/" rel="prev" title="Word Pattern">
-                Word Pattern <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -388,8 +367,8 @@ hash的思想，使用第一个链表建立hash表，然后从第二个链表中
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/24/Intersection-of-Two-Linked-Lists/"
-           data-title="Intersection of Two Linked Lists" data-url="http://yoursite.com/2016/07/24/Intersection-of-Two-Linked-Lists/">
+      <div class="ds-thread" data-thread-key="2016/07/24/Word-Pattern/"
+           data-title="Word Pattern" data-url="http://yoursite.com/2016/07/24/Word-Pattern/">
       </div>
     
   </div>

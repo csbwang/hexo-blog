@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="刷题," />
+  <meta name="keywords" content="位运算," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：判断一个数是不是4得m次方，不能使用循环或者递归思路：通过取对数计算，然后判断取对数的结果是不是整数，但是要注意对数的底不能太小，否则可能会出现误差导致出错，因为取对数运算本身在计算机中不是精确运算，但是如果底数过小，可能导致出现的误差超过对数结果的精度而出错。">
+<meta name="description" content="题目要求：翻转一个无符号整数n的比特位思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Power of Four">
-<meta property="og:url" content="http://yoursite.com/2016/07/19/Power-of-Four/index.html">
+<meta property="og:title" content="Reverse Bits">
+<meta property="og:url" content="http://yoursite.com/2016/07/25/Reverse-Bits/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：判断一个数是不是4得m次方，不能使用循环或者递归思路：通过取对数计算，然后判断取对数的结果是不是整数，但是要注意对数的底不能太小，否则可能会出现误差导致出错，因为取对数运算本身在计算机中不是精确运算，但是如果底数过小，可能导致出现的误差超过对数结果的精度而出错。">
-<meta property="og:updated_time" content="2016-07-19T05:03:38.000Z">
+<meta property="og:description" content="题目要求：翻转一个无符号整数n的比特位思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算">
+<meta property="og:updated_time" content="2016-07-25T13:03:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Power of Four">
-<meta name="twitter:description" content="题目要求：判断一个数是不是4得m次方，不能使用循环或者递归思路：通过取对数计算，然后判断取对数的结果是不是整数，但是要注意对数的底不能太小，否则可能会出现误差导致出错，因为取对数运算本身在计算机中不是精确运算，但是如果底数过小，可能导致出现的误差超过对数结果的精度而出错。">
+<meta name="twitter:title" content="Reverse Bits">
+<meta name="twitter:description" content="题目要求：翻转一个无符号整数n的比特位思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Power of Four | Phenix </title>
+  <title> Reverse Bits | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +234,7 @@
             
             
               
-                Power of Four
+                Reverse Bits
               
             
           </h1>
@@ -246,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-19T13:00:22+08:00" content="2016-07-19">
-              2016-07-19
+            <time itemprop="dateCreated" datetime="2016-07-25T20:53:29+08:00" content="2016-07-25">
+              2016-07-25
             </time>
           </span>
 
@@ -276,8 +276,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/19/Power-of-Four/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/19/Power-of-Four/" itemprop="commentsCount"></span>
+                <a href="/2016/07/25/Reverse-Bits/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/Reverse-Bits/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,9 +299,10 @@
       
 
       
-        <p>题目要求：判断一个数是不是4得m次方，不能使用循环或者递归<br>思路：通过取对数计算，然后判断取对数的结果是不是整数，但是要注意对数的底不能太小，否则可能会出现误差导致出错，因为取对数运算本身在计算机中不是精确运算，但是如果底数过小，可能导致出现的误差超过对数结果的精度而出错。</p>
+        <p>题目要求：翻转一个无符号整数n的比特位<br>思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 解法1</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(num &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">double</span> res = Math.log10(num) / Math.log10(<span class="number">4</span>);</div><div class="line">        <span class="keyword">return</span> res - (<span class="keyword">int</span>)res == <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 解法2，leetcode测试此法效率更高</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> num &lt;= <span class="number">0</span> ? <span class="keyword">false</span> : num == Math.pow(<span class="number">4</span>, Math.round(Math.log10(num) / Math.log10(<span class="number">4</span>)));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">// you need treat n as an unsigned value</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverseBits</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++, n &gt;&gt;= <span class="number">1</span>)&#123;</div><div class="line">            <span class="comment">// 把最低位移到最高位只需要移动31次，第一次移的无用位最终会移出去</span></div><div class="line">            <span class="comment">//result = result &lt;&lt; 1 | (n &amp; 1); </span></div><div class="line">            </div><div class="line">            <span class="comment">// 只移动31次的写法</span></div><div class="line">            result = result | (n &amp; <span class="number">1</span>);</div><div class="line">            <span class="keyword">if</span>(i != <span class="number">31</span>) result &lt;&lt;= <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -315,7 +316,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/刷题/" rel="tag">#刷题</a>
+            <a href="/tags/位运算/" rel="tag">#位运算</a>
           
         </div>
       
@@ -324,17 +325,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/19/Power-of-Three/" rel="next" title="Power of Three">
-                <i class="fa fa-chevron-left"></i> Power of Three
+              <a href="/2016/07/25/Length-of-Last-Word/" rel="next" title="Length of Last Word">
+                <i class="fa fa-chevron-left"></i> Length of Last Word
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/19/Binary-Tree-Level-Order-Traversal-II/" rel="prev" title="Binary Tree Level Order Traversal II">
-                Binary Tree Level Order Traversal II <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -366,8 +363,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/19/Power-of-Four/"
-           data-title="Power of Four" data-url="http://yoursite.com/2016/07/19/Power-of-Four/">
+      <div class="ds-thread" data-thread-key="2016/07/25/Reverse-Bits/"
+           data-title="Reverse Bits" data-url="http://yoursite.com/2016/07/25/Reverse-Bits/">
       </div>
     
   </div>

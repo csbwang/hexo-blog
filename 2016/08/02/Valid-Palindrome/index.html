@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Shell," />
+  <meta name="keywords" content="String,Leetcode," />
 
 
 
@@ -57,22 +57,16 @@
 
 
 
-<meta name="description" content="原文出处：大CC
-
-本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。">
+<meta name="description" content="题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小参考思路：直接从两端往中间开始判断，过滤掉不合法字符">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Shell 文本处理工具集锦">
-<meta property="og:url" content="http://yoursite.com/2016/05/12/Linux-Shell-文本处理工具集锦/index.html">
+<meta property="og:title" content="Valid Palindrome">
+<meta property="og:url" content="http://yoursite.com/2016/08/02/Valid-Palindrome/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="原文出处：大CC
-
-本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。">
-<meta property="og:updated_time" content="2016-05-17T01:47:06.000Z">
+<meta property="og:description" content="题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小参考思路：直接从两端往中间开始判断，过滤掉不合法字符">
+<meta property="og:updated_time" content="2016-08-02T08:19:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Shell 文本处理工具集锦">
-<meta name="twitter:description" content="原文出处：大CC
-
-本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。">
+<meta name="twitter:title" content="Valid Palindrome">
+<meta name="twitter:description" content="题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小参考思路：直接从两端往中间开始判断，过滤掉不合法字符">
 
 
 
@@ -90,7 +84,7 @@
   };
 </script>
 
-  <title> Linux Shell 文本处理工具集锦 | Phenix </title>
+  <title> Valid Palindrome | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +234,7 @@
             
             
               
-                Linux Shell 文本处理工具集锦
+                Valid Palindrome
               
             
           </h1>
@@ -252,38 +246,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-12T14:42:26+08:00" content="2016-05-12">
-              2016-05-12
+            <time itemprop="dateCreated" datetime="2016-08-02T15:55:49+08:00" content="2016-08-02">
+              2016-08-02
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/12/Linux-Shell-文本处理工具集锦/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/12/Linux-Shell-文本处理工具集锦/" itemprop="commentsCount"></span>
+                <a href="/2016/08/02/Valid-Palindrome/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/Valid-Palindrome/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,46 +280,9 @@
       
 
       
-        <blockquote>
-<p>原文出处：<a href="http://www.cnblogs.com/me115/p/3427319.html" target="_blank" rel="external">大CC</a></p>
-</blockquote>
-<p>本文将介绍Linux下使用Shell处理文本时最常用的工具：find、grep、xargs、sort、uniq、tr、cut、paste、wc、sed、awk，<br>提供的例子和参数都是最常用和最为实用的，我对shell脚本使用的原则是命令单行书写，尽量不要超过2行，如果有更为复杂的任务需求，还是考虑python吧。<br><a id="more"></a></p>
-<h3 id="find-文件查找"><a href="#find-文件查找" class="headerlink" title="find 文件查找"></a>find 文件查找</h3><ol>
-<li><p>查找txt和pdf文件</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . ( -name <span class="string">"*.txt"</span> -o -name <span class="string">"*.pdf"</span> ) -print</div></pre></td></tr></table></figure>
-</li>
-<li><p>正则方式查找.txt和pdf</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find . -regex  <span class="string">".*(.txt|.pdf)$"</span></div><div class="line"><span class="comment"># -iregex： 忽略大小写的正则</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>否定参数，查找所有非txt文本</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . ! -name <span class="string">"*.txt"</span> -print</div></pre></td></tr></table></figure>
-</li>
-<li><p>指定搜索深度，打印出当前目录的文件（深度为1）</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -maxdepth <span class="number">1</span> -type f</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="定制搜索"><a href="#定制搜索" class="headerlink" title="定制搜索"></a>定制搜索</h3><ol>
-<li><p>按类型搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">find . -type d -print  <span class="comment">#只列出所有目录</span></div><div class="line"><span class="comment"># -type f 文件 / l 符号链接</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>按时间搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># -atime 访问时间 (单位是天，分钟单位则是-amin，以下类似）</span></div><div class="line"><span class="comment"># -mtime 修改时间 （内容被修改）</span></div><div class="line"><span class="comment"># -ctime 变化时间 （元数据或权限变化）</span></div><div class="line"><span class="comment"># 最近7天被访问过的所有文件：</span></div><div class="line">find . -atime <span class="number">7</span> -type f -print</div></pre></td></tr></table></figure>
-</li>
-<li><p>按大小搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># w字 k M G</span></div><div class="line"><span class="comment"># 寻找大于2k的文件</span></div><div class="line">find . -type f -size +<span class="number">2</span>k</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<ol>
-<li><p>按权限搜索</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -type f -perm <span class="number">644</span> -print <span class="comment">#找具有可执行权限的所有文件</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>按用户查找</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -type f -user weber -print <span class="comment">#找用户weber所拥有的文件</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-
+        <p>题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小<br>参考思路：直接从两端往中间开始判断，过滤掉不合法字符</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isRightChar</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        <span class="keyword">char</span>[] charArr = s.toLowerCase().toCharArray();</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.length() - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</div><div class="line">            <span class="keyword">if</span>(!isRightChar(charArr[i]))&#123;</div><div class="line">                i++;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(!isRightChar(charArr[j]))&#123;</div><div class="line">                j--;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(charArr[i] != charArr[j]) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            i++;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -358,7 +296,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Shell/" rel="tag">#Shell</a>
+            <a href="/tags/String/" rel="tag">#String</a>
+          
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
           
         </div>
       
@@ -367,17 +307,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/简单数据结构算法题/" rel="next" title="简单数据结构算法题">
-                <i class="fa fa-chevron-left"></i> 简单数据结构算法题
+              <a href="/2016/08/02/Count-Primes/" rel="next" title="Count Primes">
+                <i class="fa fa-chevron-left"></i> Count Primes
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/05/linux-命令积累一/" rel="prev" title="linux 命令积累一">
-                linux 命令积累一 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,8 +345,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/12/Linux-Shell-文本处理工具集锦/"
-           data-title="Linux Shell 文本处理工具集锦" data-url="http://yoursite.com/2016/05/12/Linux-Shell-文本处理工具集锦/">
+      <div class="ds-thread" data-thread-key="2016/08/02/Valid-Palindrome/"
+           data-title="Valid Palindrome" data-url="http://yoursite.com/2016/08/02/Valid-Palindrome/">
       </div>
     
   </div>
@@ -537,7 +473,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#find-文件查找"><span class="nav-number">1.</span> <span class="nav-text">find 文件查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定制搜索"><span class="nav-number">2.</span> <span class="nav-text">定制搜索</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -57,22 +57,22 @@
 
 
 
-<meta name="description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素
+<meta name="description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，始终将当前最小值置于最小值栈栈顶
 &amp;lt;!-more–&amp;gt;
-12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your">
+12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your data structure here">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Min Stack">
 <meta property="og:url" content="http://yoursite.com/2016/08/03/Min-Stack/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素
+<meta property="og:description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，始终将当前最小值置于最小值栈栈顶
 &amp;lt;!-more–&amp;gt;
-12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your">
-<meta property="og:updated_time" content="2016-08-03T04:03:16.000Z">
+12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your data structure here">
+<meta property="og:updated_time" content="2016-08-03T04:16:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Min Stack">
-<meta name="twitter:description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素
+<meta name="twitter:description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，始终将当前最小值置于最小值栈栈顶
 &amp;lt;!-more–&amp;gt;
-12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your">
+12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your data structure here">
 
 
 
@@ -286,7 +286,7 @@
       
 
       
-        <p>题目要求：实现一个可以获取最小值得栈<br>参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素</p>
+        <p>题目要求：实现一个可以获取最小值得栈<br>参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，始终将当前最小值置于最小值栈栈顶</p>
 <p>&lt;!-more–&gt;</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">/** initialize your data structure here. */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> Stack&lt;Integer&gt; s = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">    <span class="keyword">private</span> Stack&lt;Integer&gt; mins = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(mins.empty() || x &lt;= mins.peek()) mins.push(x);</div><div class="line">        s.push(x);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s.peek().equals(mins.peek())) mins.pop();</div><div class="line">        s.pop();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> s.peek();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mins.peek();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 

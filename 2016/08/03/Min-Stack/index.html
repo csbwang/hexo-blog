@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="位运算," />
+  <meta name="keywords" content="Leetcode,Stack," />
 
 
 
@@ -57,16 +57,22 @@
 
 
 
-<meta name="description" content="题目要求：翻转一个无符号整数n的比特位思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算">
+<meta name="description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素
+&amp;lt;!-more–&amp;gt;
+12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reverse Bits">
-<meta property="og:url" content="http://yoursite.com/2016/07/25/Reverse-Bits/index.html">
+<meta property="og:title" content="Min Stack">
+<meta property="og:url" content="http://yoursite.com/2016/08/03/Min-Stack/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：翻转一个无符号整数n的比特位思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算">
-<meta property="og:updated_time" content="2016-07-25T13:03:35.000Z">
+<meta property="og:description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素
+&amp;lt;!-more–&amp;gt;
+12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your">
+<meta property="og:updated_time" content="2016-08-03T04:03:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Reverse Bits">
-<meta name="twitter:description" content="题目要求：翻转一个无符号整数n的比特位思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算">
+<meta name="twitter:title" content="Min Stack">
+<meta name="twitter:description" content="题目要求：实现一个可以获取最小值得栈参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素
+&amp;lt;!-more–&amp;gt;
+12345678910111213141516171819202122232425262728public class MinStack &amp;#123;    /** initialize your">
 
 
 
@@ -84,7 +90,7 @@
   };
 </script>
 
-  <title> Reverse Bits | Phenix </title>
+  <title> Min Stack | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +240,7 @@
             
             
               
-                Reverse Bits
+                Min Stack
               
             
           </h1>
@@ -246,38 +252,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T20:53:29+08:00" content="2016-07-25">
-              2016-07-25
+            <time itemprop="dateCreated" datetime="2016-08-03T11:27:27+08:00" content="2016-08-03">
+              2016-08-03
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/25/Reverse-Bits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/Reverse-Bits/" itemprop="commentsCount"></span>
+                <a href="/2016/08/03/Min-Stack/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/03/Min-Stack/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -299,9 +286,9 @@
       
 
       
-        <p>题目要求：翻转一个无符号整数n的比特位<br>思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算</p>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="comment">// you need treat n as an unsigned value</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverseBits</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++, n &gt;&gt;= <span class="number">1</span>)&#123;</div><div class="line">            <span class="comment">// 把最低位移到最高位只需要移动31次，第一次移的无用位最终会移出去</span></div><div class="line">            <span class="comment">//result = result &lt;&lt; 1 | (n &amp; 1); </span></div><div class="line">            </div><div class="line">            <span class="comment">// 只移动31次的写法</span></div><div class="line">            result = result | (n &amp; <span class="number">1</span>);</div><div class="line">            <span class="keyword">if</span>(i != <span class="number">31</span>) result &lt;&lt;= <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p>题目要求：实现一个可以获取最小值得栈<br>参考思路：利用两个栈，一个栈进行常规操作，另一个栈存放最小值，最小值是动态变化的，最小值栈中的元素始终是上面的元素小于等于下面的元素</p>
+<p>&lt;!-more–&gt;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">/** initialize your data structure here. */</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MinStack</span><span class="params">()</span> </span>&#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">private</span> Stack&lt;Integer&gt; s = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">    <span class="keyword">private</span> Stack&lt;Integer&gt; mins = <span class="keyword">new</span> Stack&lt;&gt;();</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(mins.empty() || x &lt;= mins.peek()) mins.push(x);</div><div class="line">        s.push(x);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(s.peek().equals(mins.peek())) mins.pop();</div><div class="line">        s.pop();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> s.peek();</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> mins.peek();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -316,7 +303,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/位运算/" rel="tag">#位运算</a>
+            <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Stack/" rel="tag">#Stack</a>
           
         </div>
       
@@ -325,17 +314,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/25/Length-of-Last-Word/" rel="next" title="Length of Last Word">
-                <i class="fa fa-chevron-left"></i> Length of Last Word
+              <a href="/2016/08/02/Valid-Palindrome/" rel="next" title="Valid Palindrome">
+                <i class="fa fa-chevron-left"></i> Valid Palindrome
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/27/Add-Binary/" rel="prev" title="Add Binary">
-                Add Binary <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -367,8 +352,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/25/Reverse-Bits/"
-           data-title="Reverse Bits" data-url="http://yoursite.com/2016/07/25/Reverse-Bits/">
+      <div class="ds-thread" data-thread-key="2016/08/03/Min-Stack/"
+           data-title="Min Stack" data-url="http://yoursite.com/2016/08/03/Min-Stack/">
       </div>
     
   </div>

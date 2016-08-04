@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="String,Leetcode," />
+  <meta name="keywords" content="Leetcode,Binary Search," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小参考思路：直接从两端往中间开始判断，过滤掉不合法字符">
+<meta name="description" content="题目要求：给定1到n个版本，如果第i个版本出错，则从i到n的所有版本也都会出错，请找出第一个出错的版本号，题目提供版本是否出错的检验函数isBadVersion()参考思路：相当于找一个版本，它的前一个版本是正确的，而它是出错的，可以借助二分查找的思路进行">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Valid Palindrome">
-<meta property="og:url" content="http://yoursite.com/2016/08/02/Valid-Palindrome/index.html">
+<meta property="og:title" content="First Bad Version">
+<meta property="og:url" content="http://yoursite.com/2016/08/04/First-Bad-Version/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小参考思路：直接从两端往中间开始判断，过滤掉不合法字符">
-<meta property="og:updated_time" content="2016-08-02T08:19:16.000Z">
+<meta property="og:description" content="题目要求：给定1到n个版本，如果第i个版本出错，则从i到n的所有版本也都会出错，请找出第一个出错的版本号，题目提供版本是否出错的检验函数isBadVersion()参考思路：相当于找一个版本，它的前一个版本是正确的，而它是出错的，可以借助二分查找的思路进行">
+<meta property="og:updated_time" content="2016-08-04T11:21:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Valid Palindrome">
-<meta name="twitter:description" content="题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小参考思路：直接从两端往中间开始判断，过滤掉不合法字符">
+<meta name="twitter:title" content="First Bad Version">
+<meta name="twitter:description" content="题目要求：给定1到n个版本，如果第i个版本出错，则从i到n的所有版本也都会出错，请找出第一个出错的版本号，题目提供版本是否出错的检验函数isBadVersion()参考思路：相当于找一个版本，它的前一个版本是正确的，而它是出错的，可以借助二分查找的思路进行">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> Valid Palindrome | Phenix </title>
+  <title> First Bad Version | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -234,7 +234,7 @@
             
             
               
-                Valid Palindrome
+                First Bad Version
               
             
           </h1>
@@ -246,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-02T15:55:49+08:00" content="2016-08-02">
-              2016-08-02
+            <time itemprop="dateCreated" datetime="2016-08-04T19:08:14+08:00" content="2016-08-04">
+              2016-08-04
             </time>
           </span>
 
@@ -257,8 +257,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/08/02/Valid-Palindrome/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/02/Valid-Palindrome/" itemprop="commentsCount"></span>
+                <a href="/2016/08/04/First-Bad-Version/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/04/First-Bad-Version/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,9 +280,10 @@
       
 
       
-        <p>题目要求：判断一个字符串是不是回文串，字符串中仅数字和字母有效，忽略大小<br>参考思路：直接从两端往中间开始判断，过滤掉不合法字符</p>
+        <p>题目要求：给定1到n个版本，如果第i个版本出错，则从i到n的所有版本也都会出错，请找出第一个出错的版本号，题目提供版本是否出错的检验函数isBadVersion()<br>参考思路：相当于找一个版本，它的前一个版本是正确的，而它是出错的，可以借助二分查找的思路进行</p>
 <a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isRightChar</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>((c &gt;= <span class="string">'a'</span> &amp;&amp; c &lt;= <span class="string">'z'</span>) || (c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>)) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        <span class="keyword">char</span>[] charArr = s.toLowerCase().toCharArray();</div><div class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = s.length() - <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(i &lt; j)&#123;</div><div class="line">            <span class="keyword">if</span>(!isRightChar(charArr[i]))&#123;</div><div class="line">                i++;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(!isRightChar(charArr[j]))&#123;</div><div class="line">                j--;</div><div class="line">                <span class="keyword">continue</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(charArr[i] != charArr[j]) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            i++;</div><div class="line">            j--;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> <span class="keyword">extends</span> <span class="title">VersionControl</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> left = <span class="number">1</span>, right = n, mid;</div><div class="line">        <span class="keyword">while</span>(left &lt;= right)&#123;</div><div class="line">            mid = left + (right - left) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span>(isBadVersion(mid)) right = mid - <span class="number">1</span>;</div><div class="line">            <span class="keyword">else</span> left = mid + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> left;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* The isBadVersion API is defined in the parent class VersionControl.</span></div><div class="line">      boolean isBadVersion(int version); */</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> <span class="keyword">extends</span> <span class="title">VersionControl</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">firstBadVersion</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">1</span>, end = n;</div><div class="line">        <span class="keyword">while</span> (start + <span class="number">1</span> &lt; end) &#123;</div><div class="line">            <span class="keyword">int</span> mid = start + (end - start) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span> (isBadVersion(mid)) &#123;</div><div class="line">                end = mid;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                start = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">            </div><div class="line">        <span class="keyword">if</span> (isBadVersion(start)) &#123;</div><div class="line">            <span class="keyword">return</span> start;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> end;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -296,9 +297,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/String/" rel="tag">#String</a>
-          
             <a href="/tags/Leetcode/" rel="tag">#Leetcode</a>
+          
+            <a href="/tags/Binary-Search/" rel="tag">#Binary Search</a>
           
         </div>
       
@@ -307,17 +308,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/08/02/Count-Primes/" rel="next" title="Count Primes">
-                <i class="fa fa-chevron-left"></i> Count Primes
+              <a href="/2016/08/03/Min-Stack/" rel="next" title="Min Stack">
+                <i class="fa fa-chevron-left"></i> Min Stack
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/03/Min-Stack/" rel="prev" title="Min Stack">
-                Min Stack <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -349,8 +346,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/08/02/Valid-Palindrome/"
-           data-title="Valid Palindrome" data-url="http://yoursite.com/2016/08/02/Valid-Palindrome/">
+      <div class="ds-thread" data-thread-key="2016/08/04/First-Bad-Version/"
+           data-title="First Bad Version" data-url="http://yoursite.com/2016/08/04/First-Bad-Version/">
       </div>
     
   </div>

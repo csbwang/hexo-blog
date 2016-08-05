@@ -236,6 +236,106 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/05/mac安装pip工具/" itemprop="url">
+                  mac安装pip工具
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-05T15:08:30+08:00" content="2016-08-05">
+              2016-08-05
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/05/mac安装pip工具/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/05/mac安装pip工具/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>pip是python常用的包管理器，mac自带python，但是没有自带pip工具，使用brew安装pip时报错如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ brew install pip</div><div class="line">Error: No available formula with the name &quot;pip&quot;</div><div class="line">Homebrew provides pip via: `brew install python`. However you will then</div><div class="line">have two Pythons installed on your Mac, so alternatively you can install</div><div class="line">pip via the instructions at:</div><div class="line"></div><div class="line">  https://pip.readthedocs.org/en/stable/installing/#install-pip</div></pre></td></tr></table></figure>
+<p>所以需要使用brew安装python，然后会连pip一起安装，目前系统自带的python是2.7.10，已经足够我使用了，所以不准备再安装别的版本的python，否则还要进行版本切换，所以换种方式安装pip，安装如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo easy_install pip</div></pre></td></tr></table></figure>
+<p>安装成功。<br><strong>备注：</strong>后面安装一些模块的时候，最好前面加sudo，因为该模块将直接安装到系统版本python下，所以需要一定的权限。<br>国外的源比较慢，这里推荐两个国内的源，安装速度溜溜的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">pip豆瓣源安装</div><div class="line">pip install -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com nltk</div><div class="line"></div><div class="line">pip 阿里云源安装</div><div class="line">pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com nltk</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/04/Excel-Sheet-Column-Title/" itemprop="url">
                   Excel Sheet Column Title
                 </a>
@@ -1121,123 +1221,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/25/Length-of-Last-Word/" itemprop="url">
-                  Length of Last Word
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T16:49:41+08:00" content="2016-07-25">
-              2016-07-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/25/Length-of-Last-Word/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/Length-of-Last-Word/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>题目要求：求一个字符串中最后一个子串的长度，每个子串之间由一个或者多个空格分开<br>思路：可以正向查找，也可以逆向查找，具体看下面代码</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/25/Length-of-Last-Word/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1283,7 +1266,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">47</span>
+              <span class="site-state-item-count">48</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

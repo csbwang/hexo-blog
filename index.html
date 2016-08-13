@@ -236,6 +236,191 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/12/SASS常用整理/" itemprop="url">
+                  SASS常用整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-12T22:36:42+08:00" content="2016-08-12">
+              2016-08-12
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/12/SASS常用整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/12/SASS常用整理/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>SASS是一种CSS的预编译语言，可以方便快速的编写CSS，本文总结SASS的常见用法，这些常见用法基本可以满足日常大部分的使用场景，其他用法可以参照官方文档。</p>
+<h4 id="SASS安装"><a href="#SASS安装" class="headerlink" title="SASS安装"></a>SASS安装</h4><ul>
+<li>SASS的安装需要Ruby环境，先安装Ruby</li>
+<li>如果安装好了Ruby，执行下面命令：<figure class="highlight plain"><figcaption><span>install sass```即可安装</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### .scss和.sass</div><div class="line">SASS支持两种语法格式，其中.sass文件一种是类似于CSS那样的以`&#123;&#125;`和`;`编写代码的语法格式，.scss文件采用的是类似于python的缩进语法格式，两种语法编写的文件可以方便的进行转换，转换命令如下：</div><div class="line"></div><div class="line">```shell</div><div class="line">sass sass_style.sass scss_style.scss</div><div class="line">sass scss_style.scss sass_style.sass</div></pre></td></tr></table></figure></li>
+</ul>
+<p>虽然两种语法文件可以共同存在于一个项目中，但是建议还是一个项目中保持统一的语法格式</p>
+<h4 id="SASS命令"><a href="#SASS命令" class="headerlink" title="SASS命令"></a>SASS命令</h4><p>下面的命令，可以在屏幕上显示.scss文件转化的css代码。（假设文件名为test。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass test.scss</div></pre></td></tr></table></figure>
+<p>如果要将显示结果保存成文件，后面再跟一个.css文件名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass test.scss</div></pre></td></tr></table></figure>
+<p>SASS提供四个编译风格的选项：</p>
+<ul>
+<li>nested：嵌套缩进的css代码，它是默认值。</li>
+<li>expanded：没有缩进的、扩展的css代码。</li>
+<li>compact：简洁格式的css代码。</li>
+<li>compressed：压缩后的css代码。</li>
+</ul>
+<p>最后一种方式产生的css代码可读性很差，一般在产品上线时采取这种方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass --style compressed test.sass test.css</div></pre></td></tr></table></figure>
+<p>你也可以让SASS监听某个文件或目录，一旦源文件有变动，保存一下，就自动生成编译后的版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// watch a file</div><div class="line">sass --watch input.scss:output.css</div><div class="line">// watch a directory</div><div class="line">sass --watch app/sass:public/stylesheets</div></pre></td></tr></table></figure>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>SASS允许使用变量，所有变量以$开头。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$mycolor : #fff;　</div><div class="line">div &#123;</div><div class="line">	color : $mycolor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>; &#125;</div></pre></td></tr></table></figure>
+<p>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$side : left;</div><div class="line">.rounded &#123;</div><div class="line">  border-#&#123;$side&#125;-radius: 5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.rounded</span> &#123;</div><div class="line">  <span class="attribute">border-left-radius</span>: <span class="number">5px</span>; &#125;</div></pre></td></tr></table></figure>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>SASS允许在代码中使用运算表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$var:200;</div><div class="line">body &#123;</div><div class="line">  margin: (14px/2);</div><div class="line">  top: 50px + 100px;</div><div class="line">  right: $var * 10% / 100;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">7px</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">150px</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">20%</span>; &#125;</div></pre></td></tr></table></figure>
+<h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><p><em>SASS允许选择器嵌套：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">　　　　hi &#123;</div><div class="line">　　　　color:red;</div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> <span class="selector-tag">hi</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red; &#125;</div></pre></td></tr></table></figure>
+<p><em>属性也可以嵌套：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">  font: &#123;</div><div class="line">  color:red;</div><div class="line">  size: 20px;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成（注意font后面加冒号）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">font-color</span>: red;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>; &#125;</div></pre></td></tr></table></figure>
+<p><em>在嵌套的代码块内，可以使用&amp;引用父元素。</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">#main &#123;</div><div class="line">  color: black;</div><div class="line">  body &amp; &#123; font-weight: normal; &#125;</div><div class="line">  a &#123;</div><div class="line">    &amp;:hover &#123; color: red; &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">  <span class="attribute">color</span>: black; &#125;</div><div class="line">  <span class="selector-tag">body</span> <span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">font-weight</span>: normal; &#125;</div><div class="line">  <span class="selector-id">#main</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">color</span>: red; &#125;</div></pre></td></tr></table></figure>
+<p>注意两个<code>&amp;</code>产生的结果不一样，这意味着，如果你有一个多层嵌套的规则，父选择器将在被<code>&amp;</code>替换之前完全分解</p>
+<p><em><code>&amp;</code>也可以做前缀</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#main &#123;</div><div class="line">  color: black;</div><div class="line">  &amp;-sidebar &#123; border: 1px solid; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">  <span class="attribute">color</span>: black; &#125;</div><div class="line">  <span class="selector-id">#main-sidebar</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid; &#125;</div></pre></td></tr></table></figure>
+<p>但是注意，它不可用作后缀，否则会出错</p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>SASS共有两种注释风格。<br>标准的CSS注释 /<em> comment </em>/ ，会保留到编译后的文件。<br>单行注释 // comment，只保留在SASS源文件中，编译后被省略。<br>在/*后面加一个感叹号，表示这是”重要注释”。即使是压缩模式编译，也会保留这行注释，通常可以用于声明版权信息。</p>
+<h4 id="代码的重用"><a href="#代码的重用" class="headerlink" title="代码的重用"></a>代码的重用</h4><p>混入(Mixin)允许你定义可以在整个样式表中重复使用的样式，而避免了使用无语意的类（class)，mixin有点像C语言的宏（macro），是可以重用的代码块。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@mixin left($value: 10px) &#123;</div><div class="line">  float: left;</div><div class="line">  margin-right: $value;</div><div class="line">&#125;</div><div class="line">div &#123;</div><div class="line">  @include left(20px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">margin-right</span>: <span class="number">20px</span>; &#125;</div></pre></td></tr></table></figure>
+<p>混入有一下四个特点：</p>
+<ol>
+<li>可以定义参数，并且参数可以设置默认值</li>
+<li>混入也可以包含选择器和属性的混合体，甚至可以包含<code>&amp;</code>引用</li>
+<li>混入（mixin）定义也可以包含其他的混入</li>
+<li>混入的使用必须放在定义的后面</li>
+</ol>
+<h4 id="继承-extend"><a href="#继承-extend" class="headerlink" title="继承@extend"></a>继承@extend</h4><p>设计一个页面时常常遇到这种情况：当一个样式类（class）含有另一个类的所有样式，并且它自己的特定样式。处理这种最常见的方法是在HTML同时使用一个通用样式类和特殊样式类，这样不利于类的维护，@extend指令避免这些问题，告诉 Sass 一个选择器的样式应该继承另一选择器，它可以扩展id选择器和类选择器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">#basicError &#123;</div><div class="line">  color: red;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.error &#123;</div><div class="line">  @extend #basicError;</div><div class="line">  border: 1px #f00;</div><div class="line">  background-color: #fdd;</div><div class="line">&#125;</div><div class="line">.error .intrusion &#123;</div><div class="line">  background-image: url(&quot;/image/hacked.png&quot;);</div><div class="line">&#125;</div><div class="line">.seriousError &#123;</div><div class="line">  @extend .error;</div><div class="line">  border-width: 3px;</div><div class="line">&#125;</div><div class="line">.slightError &#123;</div><div class="line">  @extend .error;</div><div class="line">  border-width: 2px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#basicError</span>, <span class="selector-class">.error</span>, <span class="selector-class">.seriousError</span>, <span class="selector-class">.slightError</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red; &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.error</span>, <span class="selector-class">.seriousError</span>, <span class="selector-class">.slightError</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>; &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.error</span> <span class="selector-class">.intrusion</span>, <span class="selector-class">.seriousError</span> <span class="selector-class">.intrusion</span>, <span class="selector-class">.slightError</span> <span class="selector-class">.intrusion</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/image/hacked.png"</span>); &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.seriousError</span> &#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>; &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.slightError</span> &#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">2px</span>; &#125;</div></pre></td></tr></table></figure>
+<h4 id="占位符"><a href="#占位符" class="headerlink" title="占位符"></a>占位符</h4><p>在上面的例子中，如果我们只把<code>~#basicError</code>和<code>.Error</code>作为其他样式扩展的基础，而不直接生成它们，那么我们可以使用占位选择器实现，占位选择器看起来很像普通的 class 和 id 选择器，只是 # 或 . 被替换成了 %。他可以像 class 或者 id 选择器那样使用，而它本身的规则，不会被编译到 CSS 文件中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">%error &#123;</div><div class="line">  border: 1px #f00;</div><div class="line">  background-color: #fdd;</div><div class="line">&#125;</div><div class="line">%error .intrusion &#123;</div><div class="line">  background-image: url(&quot;/image/hacked.png&quot;);</div><div class="line">&#125;</div><div class="line">.seriousError &#123;</div><div class="line">  @extend %error;</div><div class="line">  border-width: 3px;</div><div class="line">&#125;</div><div class="line">.slightError &#123;</div><div class="line">  @extend %error;</div><div class="line">  border-width: 2px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>编译生成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.seriousError</span>, <span class="selector-class">.slightError</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> <span class="number">#f00</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#fdd</span>; &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.seriousError</span> <span class="selector-class">.intrusion</span>, <span class="selector-class">.slightError</span> <span class="selector-class">.intrusion</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/image/hacked.png"</span>); &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.seriousError</span> &#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span>; &#125;</div><div class="line"></div><div class="line"><span class="selector-class">.slightError</span> &#123;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">2px</span>; &#125;</div></pre></td></tr></table></figure>
+<h4 id="颜色函数"><a href="#颜色函数" class="headerlink" title="颜色函数"></a>颜色函数</h4><p>SASS提供一些有关颜色的处理函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">lighten(#cc3, 10%) // #d6d65c</div><div class="line">darken(#cc3, 10%) // #a3a329</div><div class="line">grayscale(#cc3) // #808080</div><div class="line">complement(#cc3) // #33c</div></pre></td></tr></table></figure>
+<h4 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h4><p>@import 需要一个文件名来导入。默认情况下，它会寻找一个 Sass 文件直接导入，但在以下情况下， 仅作为普通的 CSS @import 规则语句，不会导入任何 Sass 文件，导入时可以同时导入多个文件，文件之间采用逗号分隔。</p>
+<ul>
+<li>如果文件的扩展名是 .css。</li>
+<li>如果文件名以 http:// 开始。</li>
+<li>如果文件名是 url()。</li>
+<li>如果@import 中包含任何的媒体查询（media queries）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 以下两种方式都可以导入sass文件</div><div class="line">@import &quot;foo.scss&quot;;</div><div class="line">@import &quot;foo&quot;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 以下四种方式都可以导入css文件</div><div class="line">@import &quot;foo.css&quot;;</div><div class="line">@import &quot;foo&quot; screen;</div><div class="line">@import &quot;http://foo.com/bar&quot;;</div><div class="line">@import url(foo);</div></pre></td></tr></table></figure>
+<p>如果你有一个 SCSS 或 Sass 文件要导入，但不希望将其编译到一个CSS文件，你可以在文件名的开头添加一个下划线。这将告诉Sass不要将其编译到一个正常的CSS文件。然后，在导入语句中却不需要添加下划线。例如，你可能有一个命名为 _colors.scss 的文件，但是不会编译成 _colors.css 文件。你可以这么做</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@import &quot;colors&quot;;</div></pre></td></tr></table></figure>
+<p>这样， _colors.scss 将被导入。注意，请不要将带下划线与不带下划线的同名文件放置在同一个目录下，否则带下划线的文件将会被忽略。</p>
+<h4 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h4><h5 id="if条件语句"><a href="#if条件语句" class="headerlink" title="@if条件语句"></a>@if条件语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">main &#123;</div><div class="line">  @if lightness($color) &gt; 30% &#123;</div><div class="line">  background-color: #000;</div><div class="line">  &#125; @else &#123;</div><div class="line">    background-color: #fff;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="for循环语句"><a href="#for循环语句" class="headerlink" title="for循环语句"></a>for循环语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">main &#123;</div><div class="line">  @for $i from 1 to 10 &#123;</div><div class="line">    .border-#&#123;$i&#125; &#123;</div><div class="line">      border: #&#123;$i&#125;px solid blue;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="while循环语句"><a href="#while循环语句" class="headerlink" title="while循环语句"></a>while循环语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$i: 10;</div><div class="line">main &#123;</div><div class="line">  @while $i &gt; 0 &#123;</div><div class="line">    .border-#&#123;$i&#125; &#123;</div><div class="line">      border: #&#123;$i&#125;px solid blue;</div><div class="line">    &#125;</div><div class="line">    $i: $i - 2;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="each语句"><a href="#each语句" class="headerlink" title="each语句"></a>each语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">main &#123;</div><div class="line">  @each $member in a, b, c, d &#123;</div><div class="line">    .#&#123;$member&#125; &#123;</div><div class="line">      background-image: url(&quot;/image/#&#123;$member&#125;.jpg&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@function double($n) &#123;</div><div class="line">  @return $n * 2;</div><div class="line">&#125;</div><div class="line">#sidebar &#123;</div><div class="line">  width: double(5px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/05/mac安装pip工具/" itemprop="url">
                   mac安装pip工具
                 </a>
@@ -1103,123 +1288,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/25/Reverse-Bits/" itemprop="url">
-                  Reverse Bits
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-25T20:53:29+08:00" content="2016-07-25">
-              2016-07-25
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
-                    <span itemprop="name">Leetcode</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/25/Reverse-Bits/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/25/Reverse-Bits/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>题目要求：翻转一个无符号整数n的比特位<br>思路：原数不断右移取出最低位，赋给新数的最低位后新数再不断左移，取最低位采用与1按位与，赋给新数的最低位采用按位或运算</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/25/Reverse-Bits/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1265,7 +1333,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">48</span>
+              <span class="site-state-item-count">49</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1282,7 +1350,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

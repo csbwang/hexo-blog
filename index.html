@@ -289,8 +289,10 @@
             <h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>SASS是一种CSS的预编译语言，可以方便快速的编写CSS，本文总结SASS的常见用法，这些常见用法基本可以满足日常大部分的使用场景，其他用法可以参照官方文档。</p>
 <h4 id="SASS安装"><a href="#SASS安装" class="headerlink" title="SASS安装"></a>SASS安装</h4><ul>
 <li>SASS的安装需要Ruby环境，先安装Ruby</li>
-<li>如果安装好了Ruby，执行下面命令：<figure class="highlight plain"><figcaption><span>install sass```即可安装</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### .scss和.sass</div><div class="line">SASS支持两种语法格式，其中.sass文件一种是类似于CSS那样的以`&#123;&#125;`和`;`编写代码的语法格式，.scss文件采用的是类似于python的缩进语法格式，两种语法编写的文件可以方便的进行转换，转换命令如下：</div><div class="line"></div><div class="line">```shell</div><div class="line">sass sass_style.sass scss_style.scss</div><div class="line">sass scss_style.scss sass_style.sass</div></pre></td></tr></table></figure></li>
+<li>如果安装好了Ruby，执行下面命令：<code>gem install sass</code>即可安装</li>
 </ul>
+<h4 id="scss和-sass"><a href="#scss和-sass" class="headerlink" title=".scss和.sass"></a>.scss和.sass</h4><p>SASS支持两种语法格式，其中.sass文件一种是类似于CSS那样的以<code>{}</code>和<code>;</code>编写代码的语法格式，.scss文件采用的是类似于python的缩进语法格式，两种语法编写的文件可以方便的进行转换，转换命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sass sass_style.sass scss_style.scss</div><div class="line">sass scss_style.scss sass_style.sass</div></pre></td></tr></table></figure>
 <p>虽然两种语法文件可以共同存在于一个项目中，但是建议还是一个项目中保持统一的语法格式</p>
 <h4 id="SASS命令"><a href="#SASS命令" class="headerlink" title="SASS命令"></a>SASS命令</h4><p>下面的命令，可以在屏幕上显示.scss文件转化的css代码。（假设文件名为test。）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass test.scss</div></pre></td></tr></table></figure>
@@ -307,15 +309,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass --style compressed test.sass test.css</div></pre></td></tr></table></figure>
 <p>你也可以让SASS监听某个文件或目录，一旦源文件有变动，保存一下，就自动生成编译后的版本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// watch a file</div><div class="line">sass --watch input.scss:output.css</div><div class="line">// watch a directory</div><div class="line">sass --watch app/sass:public/stylesheets</div></pre></td></tr></table></figure>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>SASS允许使用变量，所有变量以$开头。</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p><em>SASS允许使用变量，所有变量以$开头。</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$mycolor : #fff;　</div><div class="line">div &#123;</div><div class="line">	color : $mycolor;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>编译生成：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#fff</span>; &#125;</div></pre></td></tr></table></figure>
-<p>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中。</p>
+<p><em>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中。</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$side : left;</div><div class="line">.rounded &#123;</div><div class="line">  border-#&#123;$side&#125;-radius: 5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>编译生成：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.rounded</span> &#123;</div><div class="line">  <span class="attribute">border-left-radius</span>: <span class="number">5px</span>; &#125;</div></pre></td></tr></table></figure>
-<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>SASS允许在代码中使用运算表达式：</p>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p><em>SASS允许在代码中使用运算表达式：</em></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$var:200;</div><div class="line">body &#123;</div><div class="line">  margin: (14px/2);</div><div class="line">  top: 50px + 100px;</div><div class="line">  right: $var * 10% / 100;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>编译生成：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">7px</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">150px</span>;</div><div class="line">  <span class="attribute">right</span>: <span class="number">20%</span>; &#125;</div></pre></td></tr></table></figure>

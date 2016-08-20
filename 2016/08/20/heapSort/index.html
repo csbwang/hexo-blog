@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="VIM," />
+  <meta name="keywords" content="Sort,Heap," />
 
 
 
@@ -57,22 +57,31 @@
 
 
 
-<meta name="description" content="vim编辑器有三种模式：
-命令模式：vi启动后默认进入的是命令模式，从这个模式使用命令可以切换到另外两种模式，同时无论在任何模式下只要按一下[Esc]键都可以返回命令模式。在命令模式中输入字母i就可以进入vi的输入模式编辑文件。
-输入模式：在这个模式中我们可以编辑、修改、输入等编辑工作，在编辑器最后一行显示一个--INSERT--标志着vi进入了输入模式。当我们完成修改输入等操作的时候我们需要保存">
+<meta name="description" content="以前看堆排序，觉得很麻烦，仔细研究一番，思路清晰好多了，现在理下思路：
+
+初始化，实际上也是调整堆，只不过从第一个非叶子节点开始，一步步往上调整
+将第一个元素和当前堆得最后一个元素调到，调换后，除当前堆得最后一个之外的所有元素又形成一个新的堆，继续调整该堆，这样一共进行n-1次即可完成排序
+
+示例代码如下：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VIM常用命令">
-<meta property="og:url" content="http://yoursite.com/2016/03/31/VIM常用命令/index.html">
+<meta property="og:title" content="heapSort">
+<meta property="og:url" content="http://yoursite.com/2016/08/20/heapSort/index.html">
 <meta property="og:site_name" content="Phenix">
-<meta property="og:description" content="vim编辑器有三种模式：
-命令模式：vi启动后默认进入的是命令模式，从这个模式使用命令可以切换到另外两种模式，同时无论在任何模式下只要按一下[Esc]键都可以返回命令模式。在命令模式中输入字母i就可以进入vi的输入模式编辑文件。
-输入模式：在这个模式中我们可以编辑、修改、输入等编辑工作，在编辑器最后一行显示一个--INSERT--标志着vi进入了输入模式。当我们完成修改输入等操作的时候我们需要保存">
-<meta property="og:updated_time" content="2016-05-17T01:47:34.000Z">
+<meta property="og:description" content="以前看堆排序，觉得很麻烦，仔细研究一番，思路清晰好多了，现在理下思路：
+
+初始化，实际上也是调整堆，只不过从第一个非叶子节点开始，一步步往上调整
+将第一个元素和当前堆得最后一个元素调到，调换后，除当前堆得最后一个之外的所有元素又形成一个新的堆，继续调整该堆，这样一共进行n-1次即可完成排序
+
+示例代码如下：">
+<meta property="og:updated_time" content="2016-08-20T12:28:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VIM常用命令">
-<meta name="twitter:description" content="vim编辑器有三种模式：
-命令模式：vi启动后默认进入的是命令模式，从这个模式使用命令可以切换到另外两种模式，同时无论在任何模式下只要按一下[Esc]键都可以返回命令模式。在命令模式中输入字母i就可以进入vi的输入模式编辑文件。
-输入模式：在这个模式中我们可以编辑、修改、输入等编辑工作，在编辑器最后一行显示一个--INSERT--标志着vi进入了输入模式。当我们完成修改输入等操作的时候我们需要保存">
+<meta name="twitter:title" content="heapSort">
+<meta name="twitter:description" content="以前看堆排序，觉得很麻烦，仔细研究一番，思路清晰好多了，现在理下思路：
+
+初始化，实际上也是调整堆，只不过从第一个非叶子节点开始，一步步往上调整
+将第一个元素和当前堆得最后一个元素调到，调换后，除当前堆得最后一个之外的所有元素又形成一个新的堆，继续调整该堆，这样一共进行n-1次即可完成排序
+
+示例代码如下：">
 
 
 
@@ -90,7 +99,7 @@
   };
 </script>
 
-  <title> VIM常用命令 | Phenix </title>
+  <title> heapSort | Phenix </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -240,7 +249,7 @@
             
             
               
-                VIM常用命令
+                heapSort
               
             
           </h1>
@@ -252,38 +261,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-31T09:43:53+08:00" content="2016-03-31">
-              2016-03-31
+            <time itemprop="dateCreated" datetime="2016-08-20T20:18:46+08:00" content="2016-08-20">
+              2016-08-20
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Tools/" itemprop="url" rel="index">
-                    <span itemprop="name">Tools</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/31/VIM常用命令/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/VIM常用命令/" itemprop="commentsCount"></span>
+                <a href="/2016/08/20/heapSort/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/20/heapSort/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -305,107 +295,13 @@
       
 
       
-        <h3 id="vim编辑器有三种模式："><a href="#vim编辑器有三种模式：" class="headerlink" title="vim编辑器有三种模式："></a>vim编辑器有三种模式：</h3><ul>
-<li>命令模式：vi启动后默认进入的是命令模式，从这个模式使用命令可以切换到另外两种模式，同时无论在任何模式下只要按一下<code>[Esc]</code>键都可以返回命令模式。在命令模式中输入字母<code>i</code>就可以进入vi的输入模式编辑文件。</li>
-<li>输入模式：在这个模式中我们可以编辑、修改、输入等编辑工作，在编辑器最后一行显示一个<code>--INSERT--</code>标志着vi进入了输入模式。当我们完成修改输入等操作的时候我们需要保存文件，这时我们需要先返回命令模式，在进入末行模式保存。</li>
-<li>末行模式：在命令模式输入<code>：</code>即可进入该模式，在末行模式中有好多好用的命令。</li>
-</ul>
- <a id="more"></a>
-<h3 id="一、进入输入模式："><a href="#一、进入输入模式：" class="headerlink" title="一、进入输入模式："></a>一、进入输入模式：</h3><ul>
-<li>插入命令：<code>i</code></li>
-<li>附加命令：<code>a</code></li>
-<li>打开命令：<code>o</code></li>
-<li>修改命令：<code>c</code></li>
-<li>取代命令：<code>r</code></li>
-<li>替换命令：<code>s</code></li>
-<li>退出命令：<code>Esc</code></li>
-</ul>
-<h3 id="二、输入模式的操作："><a href="#二、输入模式的操作：" class="headerlink" title="二、输入模式的操作："></a>二、输入模式的操作：</h3><ul>
-<li>光标到行首：<code>Home</code></li>
-<li>光标到行尾：<code>End</code></li>
-<li>上下翻页：<code>Page Up</code> <code>Page Down</code></li>
-<li>删除光标位置的字符：<code>Delete</code></li>
-</ul>
-<h3 id="三、命令模式使用的操作："><a href="#三、命令模式使用的操作：" class="headerlink" title="三、命令模式使用的操作："></a>三、命令模式使用的操作：</h3><h4 id="删除-剪切-操作"><a href="#删除-剪切-操作" class="headerlink" title="删除(剪切)操作"></a>删除(剪切)操作</h4><ul>
-<li>删除光标处的单个字符：<code>x</code></li>
-<li>删除光标处向右的三个字符：<code>3x</code></li>
-<li>删除光标所在行：<code>dd</code></li>
-<li>从当前行开始向下删除三行文本：<code>3dd</code></li>
-<li>删除当前字符到单词尾包括空格的所有字符：<code>dw</code></li>
-</ul>
-<h4 id="撤销操作"><a href="#撤销操作" class="headerlink" title="撤销操作"></a>撤销操作</h4><ul>
-<li>撤销上一步操作：<code>u</code></li>
-<li>取消所有操作:<code>U</code></li>
-<li>恢复对<code>u</code>命令的操作：<code>Ctrl+r</code></li>
-</ul>
-<h4 id="复制操作"><a href="#复制操作" class="headerlink" title="复制操作"></a>复制操作</h4><ul>
-<li>复制当前行到vi缓冲区：<code>yy</code></li>
-<li>复制从当前行开始复制5行到vi缓冲区：<code>5yy</code></li>
-<li>复制当前光标所在位置到单词结尾字符的内容到vi缓冲区：<code>yw</code></li>
-<li>复制当前单词部分和其后面2个单词到vi缓冲区：<code>3yw</code></li>
-<li>复制光标所在位置到行尾内容到vi缓冲区：<code>y$</code></li>
-<li>复制光标所在位置到行首内容到vi缓冲区：<code>y^</code></li>
-<li>复制到系统剪贴板：<code>&quot;+y</code></li>
-<li>从vim缓冲区粘贴到vim文件：<code>p</code></li>
-<li>从系统剪贴板粘贴到vim文件：<code>&quot;+p</code></li>
-</ul>
-<h4 id="移动操作"><a href="#移动操作" class="headerlink" title="移动操作"></a>移动操作</h4><ul>
-<li>向上移动n行：<code>nk</code></li>
-<li>向下移动n行：<code>nj</code></li>
-<li>向左移动n个字符：<code>nh</code></li>
-<li>向右移动n个字符：<code>nl</code></li>
-<li>向左移动n个单词，光标移动到单词的首字母上：<code>nw</code></li>
-<li>与<code>w</code>相反：<code>b</code></li>
-<li>向左移动n个单词，光标移动到单词的最后一个字母上：<code>ne</code></li>
-<li>与<code>e</code>相反：<code>ge</code></li>
-<li>移动到第n行的行尾：<code>n$</code></li>
-<li>移动光标到行首：<code>0(数字)</code></li>
-<li>移动光标到行首第一个非空字符上去：<code>^</code></li>
-<li>移动到文件开头：<code>gg</code></li>
-<li>移动到文件结尾：<code>shift+g</code></li>
-<li>向前翻页：<code>ctrl+f</code></li>
-<li>向后翻页：<code>ctrl+b</code></li>
-</ul>
-<h3 id="四、末行模式使用的操作："><a href="#四、末行模式使用的操作：" class="headerlink" title="四、末行模式使用的操作："></a>四、末行模式使用的操作：</h3><h4 id="查找操作"><a href="#查找操作" class="headerlink" title="查找操作"></a>查找操作</h4><ul>
-<li>至上而下的查找：<code>:/pattern</code>，其中<code>/</code>代表从光标所在位置起开始查找，例如：<code>:/work</code></li>
-<li>至下而上的查找：<code>:?pattern</code>，其中<code>/</code>代表从光标所在位置起开始查找，例如：<code>:?work</code></li>
-</ul>
-<h4 id="替换操作"><a href="#替换操作" class="headerlink" title="替换操作"></a>替换操作</h4><ul>
-<li>用new替换行中首次出现的old：<code>:s/old/new</code></li>
-<li>用new替换行中所有出现的old：<code>:s/old/new/g</code></li>
-<li>用new替换从第4行到第6行中出现的old：<code>:4,6 s/old/new/g</code></li>
-<li>用new替换整篇中每一行首次出现的old：<code>:% s/old/new</code></li>
-<li>用new替换整篇中出现的old：<code>:% s/old/new/g</code><br>如果替换的范围较大时，在所有的命令尾加一个<code>c</code>命令，强制每个替换需要用户进行确认，例如:<code>s/old/new/c</code> 或<code>s/old/new/gc</code>，如果要删除new字符，只需要将命令中的<code>new</code>改为<code>/</code></li>
-</ul>
-<h4 id="恢复文件"><a href="#恢复文件" class="headerlink" title="恢复文件"></a>恢复文件</h4><p>vi在编辑某一个文件时，会生成一个临时文件，这个文件以<code>.</code>开头并以 <code>.swp</code>结尾。正常退出该文件自动删除，如果意外退出例如忽然断电，该文件不会删除，我们在下次编辑时可以选择一下命令处理：</p>
+        <p>以前看堆排序，觉得很麻烦，仔细研究一番，思路清晰好多了，现在理下思路：</p>
 <ul>
-<li>只读打开，不改变文件内容：<code>O</code></li>
-<li>继续编辑文件，不恢复<code>.swp</code>文件保存的内容：<code>E</code></li>
-<li>将恢复上次编辑以后未保存文件内容：<code>R</code></li>
-<li>退出vi：<code>Q</code></li>
-<li>删除<code>.swp</code>文件：<code>D</code></li>
-<li>恢复未保存的内容：<code>vi -r filename</code></li>
+<li>初始化，实际上也是调整堆，只不过从第一个非叶子节点开始，一步步往上调整</li>
+<li>将第一个元素和当前堆得最后一个元素调到，调换后，除当前堆得最后一个之外的所有元素又形成一个新的堆，继续调整该堆，这样一共进行n-1次即可完成排序</li>
 </ul>
-<h3 id="五、末行模式使用的操作："><a href="#五、末行模式使用的操作：" class="headerlink" title="五、末行模式使用的操作："></a>五、末行模式使用的操作：</h3><p>可视化模式下，可以对一个文本块的整体进行操作。例如，首先高亮选中一部分文本，然后用d命令删除这个文本块。可视化模式的好处在于，你可以在做改动之前，就看到操作将影响的文本。可视化模式可以分为以下三种：</p>
-<ol>
-<li>用v命令进入的字符可视化模式（Characterwise visual mode)。文本选择是以字符为单位的。</li>
-<li>用V命令进入的行可视化模式（Linewise visual mode)。文本选择是以行为单位的。</li>
-<li>用ctrl-V进入的块可视化模式（Blockwise visual mode）。可以选择一个矩形内的文本。（注意：在Windows中，ctrl-V可能已经被影射为粘贴操作，可以使用ctrl-Q进入块可视化模式。）</li>
-</ol>
-<ul>
-<li>复制选定块到缓冲区：<code>y</code></li>
-<li>剪切选定块到缓冲区：<code>d</code></li>
-<li>粘贴缓冲区中的内容：<code>p</code></li>
-<li>多行编辑：先选中可视块，然后按住大写<code>I</code>，进行插入，然后<code>Ecs</code>，会发现每一行都插入了</li>
-</ul>
-<h3 id="六、其他："><a href="#六、其他：" class="headerlink" title="六、其他："></a>六、其他：</h3><ul>
-<li>在同一编辑窗打开第二个文件，用<code>:sp [filename]</code></li>
-<li>在多个编辑文件之间切换，用<code>Ctrl+w</code></li>
-<li>自动补全：<code>ctrl+p</code></li>
-<li>命令前面加数字表示重复次数，加字母表示使用的缓冲区名称</li>
-<li>获取帮助，用<code>:help [内容或命令]</code></li>
-</ul>
-
+<p>示例代码如下：<br><a id="more"></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">adjustHeap</span><span class="params">(<span class="keyword">int</span>[] a, <span class="keyword">int</span> size, <span class="keyword">int</span> index)</span></span>&#123;</div><div class="line">	<span class="keyword">int</span> left = index * <span class="number">2</span> + <span class="number">1</span>;</div><div class="line">	<span class="keyword">int</span> right = index * <span class="number">2</span> + <span class="number">2</span>;</div><div class="line">	<span class="keyword">int</span> max = index;</div><div class="line">	<span class="keyword">if</span>(left &lt; size &amp;&amp; a[left] &gt; a[max])&#123;</div><div class="line">		max = left;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(right &lt; size &amp;&amp; a[right] &gt; a[max])&#123;</div><div class="line">		max = right;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span>(max != index)&#123;</div><div class="line">		<span class="comment">//如果发生交换，则有可能影响下面的元素，需要对交换的元素也调整</span></div><div class="line">		swap(a[max], a[index]);</div><div class="line">		adjustHeap(a, size, max);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">headSort</span><span class="params">(<span class="keyword">int</span>[] a)</span></span>&#123;</div><div class="line">	<span class="comment">//初始化堆，其实也是调整堆得过程，只不过只调整非叶子节点</span></div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = (a.length -<span class="number">1</span>) / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)&#123;</div><div class="line">		adjustHeap(a, a.length, i);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = a.length - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--)&#123;</div><div class="line">		<span class="comment">//先将第一个元素和当前最后一个堆得元素调换，然后再调整</span></div><div class="line">		swap(a[<span class="number">0</span>], a[i]);</div><div class="line">		adjustHeap(a, i, <span class="number">0</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -419,7 +315,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/VIM/" rel="tag">#VIM</a>
+            <a href="/tags/Sort/" rel="tag">#Sort</a>
+          
+            <a href="/tags/Heap/" rel="tag">#Heap</a>
           
         </div>
       
@@ -428,17 +326,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/30/Java多线程入门/" rel="next" title="Java多线程入门">
-                <i class="fa fa-chevron-left"></i> Java多线程入门
+              <a href="/2016/08/12/SASS常用整理/" rel="next" title="SASS常用整理">
+                <i class="fa fa-chevron-left"></i> SASS常用整理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/31/Java对象的初始化顺序/" rel="prev" title="Java对象的初始化顺序">
-                Java对象的初始化顺序 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,8 +364,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/31/VIM常用命令/"
-           data-title="VIM常用命令" data-url="http://yoursite.com/2016/03/31/VIM常用命令/">
+      <div class="ds-thread" data-thread-key="2016/08/20/heapSort/"
+           data-title="heapSort" data-url="http://yoursite.com/2016/08/20/heapSort/">
       </div>
     
   </div>
@@ -598,7 +492,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vim编辑器有三种模式："><span class="nav-number">1.</span> <span class="nav-text">vim编辑器有三种模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、进入输入模式："><span class="nav-number">2.</span> <span class="nav-text">一、进入输入模式：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、输入模式的操作："><span class="nav-number">3.</span> <span class="nav-text">二、输入模式的操作：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、命令模式使用的操作："><span class="nav-number">4.</span> <span class="nav-text">三、命令模式使用的操作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除-剪切-操作"><span class="nav-number">4.1.</span> <span class="nav-text">删除(剪切)操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销操作"><span class="nav-number">4.2.</span> <span class="nav-text">撤销操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制操作"><span class="nav-number">4.3.</span> <span class="nav-text">复制操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动操作"><span class="nav-number">4.4.</span> <span class="nav-text">移动操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、末行模式使用的操作："><span class="nav-number">5.</span> <span class="nav-text">四、末行模式使用的操作：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找操作"><span class="nav-number">5.1.</span> <span class="nav-text">查找操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换操作"><span class="nav-number">5.2.</span> <span class="nav-text">替换操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复文件"><span class="nav-number">5.3.</span> <span class="nav-text">恢复文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、末行模式使用的操作："><span class="nav-number">6.</span> <span class="nav-text">五、末行模式使用的操作：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、其他："><span class="nav-number">7.</span> <span class="nav-text">六、其他：</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
